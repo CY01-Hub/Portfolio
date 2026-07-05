@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dhrubo Dey | Premium Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="cursor-glow" id="customCursor"></div>
+
+    <div class="scroll-progress" id="progressBar"></div>
+
+    <div class="loader-screen" id="loader">
+      <div class="loader-logo">DD</div>
+    </div>
+
+    <header id="navbar">
+      <div class="nav-container">
+        <a href="#home" class="logo">DHRUBO DEY</a>
+        <nav class="nav-menu" id="navMenu">
+          <ul>
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About Me</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#achievements" class="nav-link">Achievements</a></li>
+            <li><a href="#certificates" class="nav-link">Certificates</a></li>
+            <li><a href="#contact" class="nav-link">Contact Me</a></li>
+          </ul>
+        </nav>
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle Theme"
+          >
+            <i class="fas fa-moon"></i>
+          </button>
+          <div class="hamburger" id="hamburgerMenu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="home" class="hero-section">
+      <div class="gradient-blob blob-1"></div>
+      <div class="gradient-blob blob-2"></div>
+      <div class="hero-container container">
+        <div class="hero-text scroll-reveal">
+          <span class="subtitle">Hello, I'm</span>
+          <h1 class="hero-title">DHRUBO DEY</h1>
+          <h2 class="typing-container">
+            a <span class="typing-text"></span
+            ><span class="cursor">&nbsp;</span>
+          </h2>
+          <p class="hero-desc">
+            High-performing CS Engineering student specializing in secure
+            backend architectures and Python-driven AI applications.
+          </p>
+          <div class="hero-btns">
+            <a
+              href="_My_Resume_.pdf"
+              download="Dhrubo_Dey_Resume.pdf"
+              target="_blank"
+              class="btn btn-primary ripple"
+              >Download Resume <i class="fas fa-download"></i
+            ></a>
+            <a href="#contact" class="btn btn-secondary ripple">Contact Me</a>
+          </div>
+        </div>
+        <div class="hero-image-wrapper scroll-reveal">
+          <div class="image-bg-glow"></div>
+          <div class="profile-card-glass">
+            <img
+              src="Professional Pic.png"
+              alt="Dhrubo Dey Professional Portrait"
+              class="profile-img"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2 class="section-title scroll-reveal">About Me</h2>
+        <div class="about-grid">
+          <div class="about-left scroll-reveal">
+            <p class="intro-p">
+              I am a third-year Computer Science Engineering student focused on
+              building secure backend architectures, data structures,
+              algorithms, and autonomous systems from scratch. I implement
+              robust software design patterns and performance optimization
+              tracks to build secure software solutions.
+            </p>
+
+            <h3 class="sub-heading">Core Competencies</h3>
+            <div class="interests-tags">
+              <span class="tag">Data Structures & Algorithms (DSA)</span>
+              <span class="tag">System Architecture Design</span>
+              <span class="tag">Object-Oriented Programming (OOP)</span>
+              <span class="tag">Code Optimization</span>
+              <span class="tag">Secure Software Design</span>
+            </div>
+
+            <div class="feature-cards">
+              <div class="f-card glass">
+                <i class="fas fa-brain icon-accent"></i>
+                <h4>Algorithmic Precision</h4>
+                <p>
+                  Applying custom logic configurations to evaluate complex
+                  algorithmic data profiles safely.
+                </p>
+              </div>
+              <div class="f-card glass">
+                <i class="fas fa-shield-alt icon-accent"></i>
+                <h4>Secure Design</h4>
+                <p>
+                  Proactively mapping card, net-banking, and cryptographic
+                  workflows to minimize application system footprints.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-right scroll-reveal">
+            <h3 class="sub-heading">Technical Proficiencies</h3>
+            <div class="skills-container">
+              <div class="skill-entry">
+                <div class="skill-info">
+                  <span>C Programming</span><span>90%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-progress-bar" data-progress="90%"></div>
+                </div>
+              </div>
+              <div class="skill-entry">
+                <div class="skill-info">
+                  <span>Python</span><span>95%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-progress-bar" data-progress="95%"></div>
+                </div>
+              </div>
+              <div class="skill-entry">
+                <div class="skill-info"><span>Java</span><span>80%</span></div>
+                <div class="skill-bar-bg">
+                  <div class="skill-progress-bar" data-progress="80%"></div>
+                </div>
+              </div>
+              <div class="skill-entry">
+                <div class="skill-info">
+                  <span>Data Structures & Algorithms</span><span>95%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-progress-bar" data-progress="95%"></div>
+                </div>
+              </div>
+              <div class="skill-entry">
+                <div class="skill-info">
+                  <span>File I/O & Memory Management</span><span>90%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-progress-bar" data-progress="90%"></div>
+                </div>
+              </div>
+              <div class="skill-entry">
+                <div class="skill-info">
+                  <span>Git & Linux Command Line</span><span>80%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-progress-bar" data-progress="80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="education-section">
+      <div class="container">
+        <h2 class="section-title scroll-reveal">Education</h2>
+        <div class="timeline">
+          <div class="timeline-line"></div>
+
+          <div class="timeline-item left scroll-reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glass">
+              <span class="edu-year">2024 — Present</span>
+              <h3>B.Tech in Computer Science Engineering</h3>
+              <p class="edu-inst">Swami Vivekananda University</p>
+              <p class="edu-details">Third Year Undergraduate Profile</p>
+              <span class="edu-badge">CGPA: 9.0+ / 10.0</span>
+            </div>
+          </div>
+
+          <div class="timeline-item right scroll-reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glass">
+              <span class="edu-year">Graduated 2024</span>
+              <h3>Higher Secondary (Class XII — ISC)</h3>
+              <p class="edu-inst">St. Jude's High School</p>
+              <span class="edu-badge">Completed Science Stream</span>
+            </div>
+          </div>
+
+          <div class="timeline-item left scroll-reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glass">
+              <span class="edu-year">Graduated 2022</span>
+              <h3>Secondary (Class X — ICSE)</h3>
+              <p class="edu-inst">St. Jude's High School</p>
+              <span class="edu-badge">Completed Matriculation Milestones</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+      <div class="container">
+        <h2 class="section-title scroll-reveal">Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card glass scroll-reveal">
+            <div class="proj-details">
+              <h3>AI-Powered-Study-Notes Generator</h3>
+              <p>
+                Text-to-summary intelligent web automation tool. Implements
+                advanced text preprocessing algorithms, study plans, and
+                automated summary log feeds using LLM APIs.
+              </p>
+              <div class="proj-stack">
+                <span>Python</span><span>HTML</span><span>CSS</span
+                ><span>LLM APIs</span>
+              </div>
+              <div class="proj-links">
+                <a
+                  href="https://github.com/CY01-Hub/AI-Powered-Study-Notes"
+                  target="_blank"
+                  class="btn-link"
+                  ><i class="fab fa-github"></i> Source Code</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="project-card glass scroll-reveal">
+            <div class="proj-details">
+              <h3>AI-Career-Copilot</h3>
+              <p>
+                Web-based AI resume parsing software and career advisory system.
+                Built entirely from scratch to offer contextual engineering
+                pathway metrics and recommendations.
+              </p>
+              <div class="proj-stack">
+                <span>Python</span><span>HTML</span><span>CSS</span
+                ><span>LLM APIs</span>
+              </div>
+              <div class="proj-links">
+                <a
+                  href="https://github.com/CY01-Hub/AI-Career-Copilot"
+                  target="_blank"
+                  class="btn-link"
+                  ><i class="fab fa-github"></i> Source Code</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="project-card glass scroll-reveal">
+            <div class="proj-details">
+              <h3>Online-Payment Terminal Gateway Simulator</h3>
+              <p>
+                Command-line clone executing core transactional systems logic
+                safely. Configures realistic Card, Net-Banking, and UPI tracking
+                flows with strict format verification checks.
+              </p>
+              <div class="proj-stack">
+                <span>Python</span><span>Backend Architecture</span
+                ><span>Security</span>
+              </div>
+              <div class="proj-links">
+                <a
+                  href="https://github.com/CY01-Hub/Online-Payment-"
+                  target="_blank"
+                  class="btn-link"
+                  ><i class="fab fa-github"></i> Source Code</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="project-card glass scroll-reveal">
+            <div class="proj-details">
+              <h3>Bank Management System / File Utility</h3>
+              <p>
+                High-speed directory cataloging and tracking platform. Leverages
+                advanced custom searching/sorting logic paths returning linear
+                performance values.
+              </p>
+              <div class="proj-stack">
+                <span>C</span><span>File I/O</span><span>Data Structures</span>
+              </div>
+              <div class="proj-links">
+                <a
+                  href="https://github.com/CY01-Hub/Bank-Management-System"
+                  target="_blank"
+                  class="btn-link"
+                  ><i class="fab fa-github"></i> Source Code</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements" class="portfolio-section">
+      <h2 class="section-title">Achievements</h2>
+      <div class="cards-grid">
+        <div class="glass-card achievement-card">
+          <div class="badge gold-badge">Elite</div>
+          <h3>Programming in Java</h3>
+          <p class="organization">NPTEL | IIT Kharagpur</p>
+          <div class="achievement-details">
+            <span class="score">Consolidated Score: <strong>97%</strong></span>
+            <span class="stats">Assignments: 25/25 | Exam: 72/75</span>
+          </div>
+          <p class="summary">
+            Successfully certified with an elite academic standing among 19,306
+            certified candidates globally.
+          </p>
+        </div>
+
+        <div class="glass-card achievement-card">
+          <div class="badge elite-badge">Top 5% Topper</div>
+          <h3>Data Structures and Algorithms Design</h3>
+          <p class="organization">NPTEL | IIT Kanpur</p>
+          <div class="achievement-details">
+            <span class="score">Consolidated Score: <strong>77%</strong></span>
+            <span class="stats">Assignments: 24.38/25 | Exam: 52.5/75</span>
+          </div>
+          <p class="summary">
+            Recognized as an Elite candidate, finishing within the Top 5% rank
+            selection of 4,313 total certified participants.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificates" class="portfolio-section">
+      <h2 class="section-title">Certificates</h2>
+      <div class="cards-grid">
+        <div class="glass-card certificate-card">
+          <span class="cert-timeline">Jan - Apr 2026</span>
+          <h3>Programming in Java</h3>
+          <p class="issuer">Issued by IIT Kharagpur</p>
+          <ul class="cert-meta">
+            <li><strong>Roll No:</strong> NPTEL26CS36S858702120</li>
+            <li><strong>Credits Recommended:</strong> 4 Credits</li>
+          </ul>
+          <a href="certificates/JAVA.pdf" target="_blank" class="btn-verify">View Certificate</a>
+        </div>
+
+        <div class="glass-card certificate-card">
+          <span class="cert-timeline">Jul - Oct 2025</span>
+          <h3>Data Structures and Algorithms Design</h3>
+          <p class="issuer">Issued by IIT Kanpur</p>
+          <ul class="cert-meta">
+            <li><strong>Roll No:</strong> NPTEL25CS81S360800725</li>
+            <li><strong>Credits Recommended:</strong> 3 or 4 Credits</li>
+          </ul>
+          <a href="certificates/DSA.pdf" target="_blank" class="btn-verify">View Certificate</a>
+        </div>
+
+        <div class="glass-card certificate-card">
+          <span class="cert-timeline">Jan - Apr 2025</span>
+          <h3>Problem Solving Through Programming in C</h3>
+          <p class="issuer">Issued by IIT Kharagpur</p>
+          <ul class="cert-meta">
+            <li><strong>Roll No:</strong> NPTEL25CS56S649503101</li>
+            <li><strong>Consolidated Score:</strong> 56%</li>
+          </ul>
+          <a href="certificates/C Lang.pdf" target="_blank" class="btn-verify">View Certificate</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2 class="section-title scroll-reveal">Contact Me</h2>
+        <div class="contact-grid">
+          <div class="contact-left scroll-reveal">
+            <h3>Let's build something scalable.</h3>
+            <p class="contact-pitch">
+              If you're looking for an optimized software engineering intern or
+              have performance-critical challenges, let's connect.
+            </p>
+
+            <div class="info-links-list">
+              <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <span>dhrubodey18@gmail.com</span>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-phone-alt"></i> <span>+91 8697989520</span>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Kolkata, West Bengal, India</span>
+              </div>
+            </div>
+
+            <div class="social-row">
+              <a
+                href="https://github.com/CY01-Hub"
+                target="_blank"
+                class="social-circle glass"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/dhrubo-dey/"
+                target="_blank"
+                class="social-circle glass"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="contact-right scroll-reveal">
+            <form
+              class="contact-form glass"
+              action="#"
+              method="POST"
+              onsubmit="event.preventDefault()"
+            >
+              <div class="input-row">
+                <div class="input-group">
+                  <input type="text" id="name" required placeholder=" " />
+                  <label for="name">Name</label>
+                </div>
+                <div class="input-group">
+                  <input type="email" id="email" required placeholder=" " />
+                  <label for="email">Email</label>
+                </div>
+              </div>
+              <div class="input-group">
+                <input type="text" id="subject" required placeholder=" " />
+                <label for="subject">Subject</label>
+              </div>
+              <div class="input-group">
+                <textarea
+                  id="message"
+                  rows="4"
+                  required
+                  placeholder=" "
+                ></textarea>
+                <label for="message">Message</label>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full ripple">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to Top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <footer>
+      <div class="footer-container container">
+        <div class="footer-top">
+          <div class="footer-logo">DHRUBO DEY</div>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <hr class="footer-divider" />
+        <div class="footer-bottom">
+          <p>&copy; 2026 Dhrubo Dey. All Rights Reserved.</p>
+          <p>Designed for System Performance & Logic</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
