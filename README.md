@@ -8,7 +8,7 @@
 
 ---
 
-### 👨‍💻 About Me
+### 👨‍💻 About Me :
 
 I am a passionate developer who loves turning complex logic into functional, everyday software. Whether I'm building lightweight core utilities that run directly in a terminal or designing intelligent, web-based tools, I thrive on clean architecture and smart problem-solving.
 
@@ -18,7 +18,7 @@ I am a passionate developer who loves turning complex logic into functional, eve
 
 ---
 
-### 🛠️ Tech Stack & Toolkit
+### 🛠️ Tech Stack & Toolkit :
 
 <p align="left">
   <!-- Languages -->
@@ -36,13 +36,13 @@ I am a passionate developer who loves turning complex logic into functional, eve
 
 ---
 
-### 🎯 Highlighted Projects
+### 🎯 Highlighted Projects :
 
-#### 🧠 AI-Driven Applications
+#### 🧠 AI-Driven Applications -
 *   **Medical Report Analyzer:** An intelligent tool built to parse complex medical documentation and break it down into easily digestible summaries.
 *   **Study Notes Generator:** A productivity application designed to streamline student life by auto-generating structured summaries and revision notes from textbook units.
 
-#### ⚙️ System Utilities & Simulation
+#### ⚙️ System Utilities & Simulation -
 *   **Online Payment System:** A terminal-based UPI checkout clone built using precise operational flows, custom validation, and unique transactional ID generation (`uuid`).
 *   **Bank Account Simulator:** A crash-resistant terminal-based retail banking engine handling automated balance audits, lookups, and account registration records.
 
