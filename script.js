@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- 1. Immediate Preloader Safe Dismissal ---
   const loader = document.getElementById("loader");
   if (loader) {
-    // Automatically hide preloader shortly after execution starts
     setTimeout(() => {
       loader.style.opacity = "0";
       setTimeout(() => {
@@ -148,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    { threshold: 0.1 },
+    { threshold: 0.1 }
   );
 
   scrollRevealElements.forEach((el) => revealObserver.observe(el));
@@ -169,12 +168,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    { threshold: 0.3 },
+    { threshold: 0.3 }
   );
 
   sections.forEach((sec) => navObserver.observe(sec));
 
-  // --- 9. Tactical Component Interaction Ripple Engine ---
+  // --- 9. Component Interaction Ripple Engine ---
   const rippleButtons = document.querySelectorAll(".ripple");
   rippleButtons.forEach((btn) => {
     btn.addEventListener("click", function (e) {
@@ -192,28 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- 10. Mouse Perspective Parallax Interaction ---
-  const heroFrame = document.getElementById("home");
-  const profileCard = document.querySelector(".profile-card-glass");
-
-  if (heroFrame && profileCard) {
-    heroFrame.addEventListener("mousemove", (e) => {
-      const xAxis = (window.innerWidth / 2 - e.clientX) / 40;
-      const yAxis = (window.innerHeight / 2 - e.clientY) / 40;
-      profileCard.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-    });
-
-    heroFrame.addEventListener("mouseleave", () => {
-      profileCard.style.transform = `rotateY(0deg) rotateX(0deg)`;
-      profileCard.style.transition = "transform 0.5s ease";
-    });
-
-    heroFrame.addEventListener("mouseenter", () => {
-      profileCard.style.transition = "none";
-    });
-  }
-
-  // --- 11. Light/Dark UI Theme Controller ---
+  // --- 10. Light/Dark UI Theme Controller ---
   const themeToggleBtn = document.getElementById("themeToggle");
   if (themeToggleBtn) {
     const toggleIcon = themeToggleBtn.querySelector("i");
@@ -238,19 +216,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
-const profileCardObj = document.querySelector(".profile-card-glass");
-const customCursorObj = document.getElementById("customCursor");
-const imageBgGlow = document.querySelector(".image-bg-glow");
-
-if (profileCardObj) {
-  profileCardObj.addEventListener("mouseenter", () => {
-    if (customCursorObj) customCursorObj.style.opacity = "0";
-    if (imageBgGlow) imageBgGlow.style.opacity = "0";
-  });
-
-  profileCardObj.addEventListener("mouseleave", () => {
-    if (customCursorObj) customCursorObj.style.opacity = "1";
-    if (imageBgGlow) imageBgGlow.style.opacity = "0.7"; // returns to original opacity
-  });
-}
