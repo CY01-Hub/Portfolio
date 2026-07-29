@@ -62,9 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Enriched technical code symbols
     const tokens = [
-      "def", "class", "SELECT * FROM", "O(1)", "0101", "{ }", "</>", "=>", "&&", 
-      "git commit", "O(log n)", "async/await", "lambda", "malloc()", "0xFF", 
-      "REST API", "SQL", "Thread.run()", "[ ]", "struct"
+      "def", "class", "SELECT * FROM", "O(1)", "0101", "{ }", "</>", "=>", "&&", "return", "HTTPS", "||",
+      "git commit", "O(log n)", "async/await", "lambda", "malloc()", "0xFF", ";", "404", "LIFO", "{ }",
+      "REST API", "SQL", "Thread.run()", "[ ]", "struct", "main", "push/pull", "JSON", "FIFO", "NULL"
     ];
     
     const particles = [];
