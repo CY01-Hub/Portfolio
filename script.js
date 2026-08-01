@@ -14,9 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const cursorDot = document.getElementById("cursorDot");
   const cursorOutline = document.getElementById("cursorOutline");
 
-  if (cursorDot && cursorOutline && window.matchMedia("(hover: hover)").matches) {
-    let mouseX = 0, mouseY = 0;
-    let outlineX = 0, outlineY = 0;
+  if (
+    cursorDot &&
+    cursorOutline &&
+    window.matchMedia("(hover: hover)").matches
+  ) {
+    let mouseX = 0,
+      mouseY = 0;
+    let outlineX = 0,
+      outlineY = 0;
 
     window.addEventListener("mousemove", (e) => {
       mouseX = e.clientX;
@@ -39,12 +45,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Universal Hover Activation for all Cards, Buttons, and Glow Elements
     const hoverables = document.querySelectorAll(
-      "a, button, input, textarea, .glass, .tag, .glow-box, .project-card, .skill-category-block"
+      "a, button, input, textarea, .glass, .tag, .glow-box, .project-card, .skill-category-block",
     );
-    
+
     hoverables.forEach((el) => {
-      el.addEventListener("mouseenter", () => cursorOutline.classList.add("cursor-hover"));
-      el.addEventListener("mouseleave", () => cursorOutline.classList.remove("cursor-hover"));
+      el.addEventListener("mouseenter", () =>
+        cursorOutline.classList.add("cursor-hover"),
+      );
+      el.addEventListener("mouseleave", () =>
+        cursorOutline.classList.remove("cursor-hover"),
+      );
     });
   }
 
@@ -62,11 +72,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Enriched technical code symbols
     const tokens = [
-      "def", "class", "SELECT * FROM", "O(1)", "0101", "{ }", "</>", "=>", "&&", "return", "HTTPS", "||",
-      "git commit", "O(log n)", "async/await", "lambda", "malloc()", "0xFF", ";", "404", "LIFO", "{ }",
-      "REST API", "SQL", "Thread.run()", "[ ]", "struct", "main", "push/pull", "JSON", "FIFO", "NULL"
+      "def",
+      "class",
+      "SELECT * FROM",
+      "O(1)",
+      "0101",
+      "{ }",
+      "</>",
+      "=>",
+      "&&",
+      "return",
+      "HTTPS",
+      "||",
+      "git commit",
+      "O(log n)",
+      "async/await",
+      "lambda",
+      "malloc()",
+      "0xFF",
+      ";",
+      "404",
+      "LIFO",
+      "{ }",
+      "REST API",
+      "SQL",
+      "Thread.run()",
+      "[ ]",
+      "struct",
+      "main",
+      "push/pull",
+      "JSON",
+      "FIFO",
+      "NULL",
     ];
-    
+
     const particles = [];
     const particleCount = Math.min(Math.floor(width / 20), 55);
 
@@ -91,8 +130,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       draw() {
-        const isLight = document.documentElement.getAttribute("data-theme") === "light";
-        ctx.fillStyle = isLight ? "rgba(37, 99, 235, 0.25)" : "rgba(96, 165, 250, 0.28)";
+        const isLight =
+          document.documentElement.getAttribute("data-theme") === "light";
+        ctx.fillStyle = isLight
+          ? "rgba(37, 99, 235, 0.25)"
+          : "rgba(96, 165, 250, 0.28)";
         ctx.font = `${this.fontSize}px monospace`;
         ctx.fillText(this.text, this.x, this.y);
       }
@@ -111,8 +153,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const animateBg = () => {
       ctx.clearRect(0, 0, width, height);
 
-      const isLight = document.documentElement.getAttribute("data-theme") === "light";
-      const lineColor = isLight ? "rgba(37, 99, 235, 0.08)" : "rgba(59, 130, 246, 0.08)";
+      const isLight =
+        document.documentElement.getAttribute("data-theme") === "light";
+      const lineColor = isLight
+        ? "rgba(37, 99, 235, 0.08)"
+        : "rgba(59, 130, 246, 0.08)";
 
       for (let i = 0; i < particles.length; i++) {
         particles[i].update();
@@ -141,7 +186,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (mDist < 160) {
           ctx.beginPath();
-          ctx.strokeStyle = isLight ? "rgba(37, 99, 235, 0.2)" : "rgba(96, 165, 250, 0.22)";
+          ctx.strokeStyle = isLight
+            ? "rgba(37, 99, 235, 0.2)"
+            : "rgba(96, 165, 250, 0.22)";
           ctx.lineWidth = 1;
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(mousePos.x, mousePos.y);
@@ -160,7 +207,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const backToTopBtn = document.getElementById("backToTop");
 
   window.addEventListener("scroll", () => {
-    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const totalHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
     if (totalHeight > 0 && progressBar) {
       const progress = (window.scrollY / totalHeight) * 100;
       progressBar.style.width = `${progress}%`;
@@ -281,7 +329,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.1 },
   );
 
   scrollRevealElements.forEach((el) => revealObserver.observe(el));
