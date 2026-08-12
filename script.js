@@ -1,13 +1,62 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --- 1. Preloader Safe Dismissal ---
+  /* --- Premium Preloader --- */
+
   const loader = document.getElementById("loader");
+
   if (loader) {
-    setTimeout(() => {
-      loader.style.opacity = "0";
-      setTimeout(() => {
-        if (loader.parentNode) loader.remove();
-      }, 500);
-    }, 150);
+    const progressBar = document.getElementById("loader-progress-bar");
+    const percent = document.getElementById("loader-percent");
+    const status = document.getElementById("loader-status");
+
+    const messages = [
+      "INITIALIZING SYSTEM",
+      "LOADING BACKEND",
+      "CONNECTING AI MODULES",
+      "SYSTEM READY",
+    ];
+
+    let progress = 0;
+
+    const loaderTimer = setInterval(() => {
+      // Increment (2.0 to 4.0 per step) for ~3 seconds duration
+      progress += Math.random() * 2.0 + 2.0;
+
+      if (progress >= 100) {
+        progress = 100;
+        clearInterval(loaderTimer);
+      }
+
+      const currentPercent = Math.floor(progress);
+
+      if (progressBar) {
+        progressBar.style.width = `${currentPercent}%`;
+      }
+
+      if (percent) {
+        percent.textContent = `${currentPercent}%`;
+      }
+
+      if (status) {
+        const index = Math.min(
+          Math.floor(currentPercent / 25),
+          messages.length - 1,
+        );
+
+        status.textContent = messages[index];
+      }
+
+      if (currentPercent === 100) {
+        setTimeout(() => {
+          loader.classList.add("loaded");
+
+          setTimeout(() => {
+            if (loader && loader.parentNode) {
+              loader.remove();
+            }
+          }, 700);
+        }, 180);
+      }
+    }, 90);
   }
 
   // --- 2. Custom Dual Cursor System with Active Animations ---
