@@ -566,16 +566,27 @@ header.nav-hidden {
 .timeline-dot {
   position: absolute;
   top: 20px;
-  width: 14px;
-  height: 14px;
-  background: var(--primary);
+  width: 32px;
+  height: 32px;
+  background: var(--bg-cards);
+  border: 2px solid var(--primary);
   border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--primary);
+  font-size: 14px;
+  z-index: 5;
+
+  box-shadow: 0 0 14px rgba(59, 130, 246, 0.45);
 }
 .timeline-item.left .timeline-dot {
-  right: -7px;
+  right: -16px;
 }
 .timeline-item.right .timeline-dot {
-  left: -7px;
+  left: -16px;
 }
 .timeline-card {
   padding: 1.8rem;
@@ -855,7 +866,7 @@ footer {
     left: 0;
   }
   .timeline-dot {
-    left: 13px !important;
+    left: 4px !important;
   }
   .hamburger {
     display: flex;
