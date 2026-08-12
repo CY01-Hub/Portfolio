@@ -589,7 +589,9 @@ header.nav-hidden {
   left: -16px;
 }
 .timeline-card {
+  width: 100%;
   padding: 1.8rem;
+  box-sizing: border-box;
 }
 .edu-year {
   font-size: 0.85rem;
@@ -848,29 +850,32 @@ footer {
   transform: translateY(0);
 }
 
-/* Responsive adjustments */
 @media (max-width: 968px) {
   .hero-container,
   .about-grid,
   .contact-grid {
     grid-template-columns: 1fr;
   }
+
   .timeline-line {
     left: 20px;
   }
+
   .timeline-item {
     width: 100%;
+    left: 0 !important;
     padding-left: 3rem !important;
+    padding-right: 0 !important;
   }
-  .timeline-item.right {
-    left: 0;
-  }
+
   .timeline-dot {
     left: 4px !important;
   }
+
   .hamburger {
     display: flex;
   }
+
   .nav-menu {
     position: fixed;
     top: 0;
@@ -881,9 +886,11 @@ footer {
     padding: 6rem 2rem;
     transition: 0.3s;
   }
+
   .nav-menu.active {
     right: 0;
   }
+
   .nav-menu ul {
     flex-direction: column;
   }
