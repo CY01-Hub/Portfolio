@@ -1,183 +1,254 @@
-<h1 align="center">👋 Hey, I'm Dhrubo Dey</h1>
+<div align="center">
 
-<h3 align="center">
-Python Developer • AI Builder • Backend Enthusiast • Future Cybersecurity Professional
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=28&duration=3000&pause=800&color=38BDF8&center=true&vCenter=true&width=700&lines=Hey,+I'm+Dhrubo+Dey+👋;AI+Application+Developer;Building+Intelligent+Systems;Exploring+AI+%7C+Backend+%7C+Cybersecurity" />
+
+<br>
+
+<h3>
+🤖 AI Builder • Python Developer • Backend Engineer • Future Cybersecurity Professional
 </h3>
 
 
-<p align="center">
+<p>
+Building intelligent applications that solve real-world problems using Artificial Intelligence.
+</p>
+
 
 <a href="https://cy01-hub.github.io/Portfolio/">
-<img src="https://img.shields.io/badge/Live%20Portfolio-Explore%20Now-🚀?style=for-the-badge&logo=googlechrome&logoColor=white&color=3B82F6"/>
+<img src="https://img.shields.io/badge/Portfolio-Explore-2563EB?style=for-the-badge&logo=googlechrome&logoColor=white"/>
 </a>
 
 <a href="https://github.com/CY01-Hub">
-<img src="https://img.shields.io/badge/GitHub-CY01--Hub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+<img src="https://img.shields.io/badge/GitHub-CY01--Hub-111827?style=for-the-badge&logo=github"/>
 </a>
 
-</p>
+<a href="https://www.linkedin.com/in/dhrubo-dey">
+<img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin"/>
+</a>
+
+</div>
 
 
 ---
 
-## 👨‍💻 About Me
+# 🧠 About Me
 
-I am a Computer Science student passionate about building practical software solutions using **Python, Backend Development, and Artificial Intelligence**.
+I am a Computer Science student passionate about building **AI-powered software solutions** that transform complex problems into simple, intelligent experiences.
 
-I enjoy transforming ideas into real-world applications — from intelligent AI platforms and automation tools to backend systems with clean architecture and efficient problem-solving.
+My focus is on creating practical AI systems using:
 
-Currently exploring the intersection of **Artificial Intelligence, Software Engineering, and Cybersecurity** while improving my skills in development, algorithms, and system design.
+- Artificial Intelligence
+- Backend Development
+- Data Processing
+- Automation
+- Secure Software Practices
 
-### 🚀 What I Do
 
-- 🔭 Building AI-driven applications and backend systems
-- 🧠 Exploring Artificial Intelligence, Machine Learning, and Cybersecurity
-- 💻 Developing scalable solutions using Python and modern technologies
-- 📚 Continuously learning Data Structures & Algorithms and Software Engineering concepts
-
-### 🎮 Beyond Coding
-
-When I'm not coding, you can find me designing massive medieval structures and managing complex resource systems in *Minecraft*. ⚒️
+Currently building AI platforms that combine intelligent analysis, structured data processing, and user-focused design.
 
 
 ---
 
-# 🛠️ Tech Stack & Toolkit
+# 🚀 My AI Ecosystem
+
+<table>
+
+<tr>
+
+<td width="33%" align="center">
+
+<h3>🩺 ClinixParse AI</h3>
+
+Medical Intelligence Platform
+
+AI-powered medical report analyzer that converts complex healthcare documents into simple, understandable insights.
+
+<br><br>
+
+<b>Focus:</b>
+
+Medical AI • Document Intelligence • Health Data
+
+</td>
 
 
-<p align="center">
+<td width="33%" align="center">
 
-<!-- Programming Languages -->
+<h3>🧭 PathForge AI</h3>
 
-<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/>
-<img src="https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white"/>
-<img src="https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white"/>
+Career Intelligence Platform
 
+AI career assistant that analyzes skills, identifies gaps, creates roadmaps, and prepares users for interviews.
 
-<!-- Backend -->
+<br><br>
 
-<img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white"/>
-<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"/>
+<b>Focus:</b>
 
+Career AI • Skill Analysis • Personalization
 
-<!-- Database -->
-
-<img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white"/>
-<img src="https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white"/>
+</td>
 
 
-<!-- Frontend -->
+<td width="33%" align="center">
 
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white"/>
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white"/>
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/>
+<h3>📓 Synthetix AI</h3>
 
+Learning Intelligence Platform
 
-<!-- Tools -->
+AI-powered study assistant that converts documents into structured notes, flashcards, and revision material.
 
-<img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white"/>
-<img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white"/>
-<img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black"/>
-<img src="https://img.shields.io/badge/VS%20Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white"/>
+<br><br>
 
-</p>
+<b>Focus:</b>
 
+Educational AI • Knowledge Extraction • Learning
 
-### 📊 AI & Data Tools
+</td>
 
+</tr>
 
-<p align="center">
-
-<img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"/>
-
-<img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white"/>
-
-<img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white"/>
-
-<img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white"/>
-
-</p>
-
-
----
-
-# 🎯 Featured Projects
-
-
-## 🩺 ClinixParse AI — Medical Intelligence Platform
-
-An AI-powered healthcare platform designed to simplify complex medical reports.
-
-ClinixParse AI analyzes medical documents, extracts important health information, highlights abnormal findings, and converts medical data into easy-to-understand insights.
-
-**Tech Stack:**
-
-`Python` `Flask` `AI APIs` `PDF Processing` `Database`
+</table>
 
 
 ---
 
+# ⚡ Featured AI Projects
 
-## 🧭 PathForge AI — Career Guidance Platform
 
-An AI-driven career assistant built to help students and professionals make better career decisions.
+<details>
 
-PathForge AI provides resume analysis, skill insights, career recommendations, and personalized guidance to help users plan their professional journey.
+<summary><b>🩺 ClinixParse AI — Medical Report Analyzer</b></summary>
 
-**Tech Stack:**
+<br>
 
-`Python` `Flask` `AI APIs` `NLP` `Database`
+An AI healthcare assistant designed to simplify medical documents.
+
+### Features
+
+✔ Medical report understanding  
+✔ Important biomarker extraction  
+✔ Abnormal value detection  
+✔ Medical terminology explanation  
+✔ Structured health insights generation  
+
+
+### Technology
+
+`Python` `Flask` `Gemini API` `PDF Processing` `MySQL`
+
+</details>
+
+
+<br>
+
+
+<details>
+
+<summary><b>🧭 PathForge AI — Career Strategy Platform</b></summary>
+
+<br>
+
+An AI career guidance system that helps users understand their professional growth path.
+
+### Features
+
+✔ Skill extraction  
+✔ Missing skill identification  
+✔ Personalized learning roadmap  
+✔ Interview question generation  
+✔ Structured AI responses  
+
+
+### Technology
+
+`Python` `Flask` `Gemini API` `NLP` `MySQL`
+
+</details>
+
+
+<br>
+
+
+<details>
+
+<summary><b>📓 Synthetix AI — Automated Notes Engine</b></summary>
+
+<br>
+
+An AI learning assistant that transforms large documents into structured study resources.
+
+### Features
+
+✔ AI-generated notes  
+✔ Topic breakdown  
+✔ Formula extraction  
+✔ Flashcards generation  
+✔ MCQ creation  
+✔ Revision sheets  
+
+
+### Technology
+
+`Python` `Flask` `Gemini API` `Document Processing` `MySQL`
+
+</details>
 
 
 ---
 
+# 🛠️ AI Development Stack
 
-## 📚 Synthetic AI — Intelligent Learning Assistant
 
-An AI-powered learning platform that transforms educational content into structured notes, summaries, and revision resources.
+<div align="center">
 
-Synthetic AI helps students understand concepts faster and improve their study workflow through intelligent content generation.
 
-**Tech Stack:**
+### 🤖 Artificial Intelligence
 
-`Python` `Flask` `AI APIs` `Document Processing` `SQL`
+<img src="https://img.shields.io/badge/Google_Gemini-4285F4?style=for-the-badge&logo=google"/>
 
+<img src="https://img.shields.io/badge/AI_APIs-111827?style=for-the-badge"/>
+
+
+### 💻 Backend
+
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python"/>
+
+<img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask"/>
+
+
+### 🌐 Frontend
+
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5"/>
+
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3"/>
+
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript"/>
+
+
+### 🗄️ Database
+
+<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql"/>
+
+
+</div>
 
 ---
 
-
-# 📈 GitHub Activity
-
-
-<p align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=CY01-Hub&show_icons=true&theme=tokyonight&hide_border=true"/>
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=CY01-Hub&theme=tokyonight&hide_border=true"/>
-
-</p>
-
-
----
-
-# 🌐 Connect With Me
+# 🌐 Let's Connect
 
 
 <p align="center">
 
 <a href="https://www.linkedin.com/in/dhrubo-dey">
-<img src="https://img.shields.io/badge/LinkedIn-Dhrubo%20Dey-0A66C2?style=for-the-badge&logo=linkedin"/>
+<img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin"/>
 </a>
-
 
 <a href="https://cy01-hub.github.io/Portfolio/">
-<img src="https://img.shields.io/badge/Portfolio-Website-3B82F6?style=for-the-badge&logo=googlechrome"/>
+<img src="https://img.shields.io/badge/Portfolio-Explore-2563EB?style=for-the-badge&logo=googlechrome"/>
 </a>
 
-
 <a href="https://github.com/CY01-Hub">
-<img src="https://img.shields.io/badge/GitHub-CY01--Hub-181717?style=for-the-badge&logo=github"/>
+<img src="https://img.shields.io/badge/GitHub-Follow-111827?style=for-the-badge&logo=github"/>
 </a>
 
 </p>
@@ -187,10 +258,10 @@ Synthetic AI helps students understand concepts faster and improve their study w
 
 <p align="center">
 
-⭐ <i>Building intelligent solutions, learning continuously, and creating technology that solves real problems.</i>
+⚡ <b>Building intelligent systems today for a smarter tomorrow.</b>
 
-<br><br>
+<br>
 
-🚀 Thanks for visiting my profile!
+⭐ Thanks for visiting my profile!
 
 </p>
