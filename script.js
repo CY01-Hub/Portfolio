@@ -408,3 +408,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+// Function to update a project logo dynamically if needed
+function setProjectLogo(elementId, imageName, altText) {
+  const imgElement = document.getElementById(elementId);
+  if (imgElement) {
+    imgElement.src = `images/${imageName}`;
+    imgElement.alt = `${altText} Logo`;
+  }
+}
