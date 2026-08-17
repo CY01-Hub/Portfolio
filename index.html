@@ -1209,6 +1209,27 @@
       <i class="fas fa-arrow-up"></i>
     </button>
 
+    <div class="terminal-modal" id="terminalModal" aria-hidden="true">
+      <div class="terminal-modal-window glass glow-box">
+        <div class="terminal-modal-head">
+          <span>DD_TERMINAL</span
+          ><button id="terminalClose" aria-label="Close terminal">×</button>
+        </div>
+        <div class="terminal-modal-output" id="terminalOutput">
+          <div>Type <b>help</b> to see available commands.</div>
+          <div>
+            <span>$</span>
+            <input
+              id="terminalInput"
+              autocomplete="off"
+              spellcheck="false"
+              aria-label="Terminal command"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer>
       <div class="footer-container container">
         <div class="footer-top">
