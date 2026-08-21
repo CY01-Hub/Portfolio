@@ -31,7 +31,7 @@ Building intelligent applications that solve real-world problems using Artificia
 
 ---
 
-# 🧠 About Me
+# 🧠 About Me :-
 
 I am a Computer Science student passionate about building **AI-powered software solutions** that transform complex problems into simple, intelligent experiences.
 
@@ -43,13 +43,11 @@ My focus is on creating practical AI systems using:
 - Automation
 - Secure Software Practices
 
-
 Currently building AI platforms that combine intelligent analysis, structured data processing, and user-focused design.
-
 
 ---
 
-# 🚀 My AI Ecosystem
+# 🚀 My AI Ecosystem :-
 
 <table>
 
@@ -71,7 +69,6 @@ Medical AI • Document Intelligence • Health Data
 
 </td>
 
-
 <td width="33%" align="center">
 
 <h3>🧭 PathForge AI</h3>
@@ -87,7 +84,6 @@ AI career assistant that analyzes skills, identifies gaps, creates roadmaps, and
 Career AI • Skill Analysis • Personalization
 
 </td>
-
 
 <td width="33%" align="center">
 
@@ -109,11 +105,9 @@ Educational AI • Knowledge Extraction • Learning
 
 </table>
 
-
 ---
 
-# ⚡ Featured AI Projects
-
+# ⚡ Featured AI Projects :-
 
 <details>
 
@@ -131,16 +125,13 @@ An AI healthcare assistant designed to simplify medical documents.
 ✔ Medical terminology explanation  
 ✔ Structured health insights generation  
 
-
 ### Technology
 
 `Python` `Flask` `Gemini API` `PDF Processing` `MySQL`
 
 </details>
 
-
 <br>
-
 
 <details>
 
@@ -158,16 +149,13 @@ An AI career guidance system that helps users understand their professional grow
 ✔ Interview question generation  
 ✔ Structured AI responses  
 
-
 ### Technology
 
 `Python` `Flask` `Gemini API` `NLP` `MySQL`
 
 </details>
 
-
 <br>
-
 
 <details>
 
@@ -193,14 +181,11 @@ An AI learning assistant that transforms large documents into structured study r
 
 </details>
 
-
 ---
 
-# 🛠️ AI Development Stack
-
+# 🛠️ AI Development Stack :-
 
 <div align="center">
-
 
 ### 🤖 Artificial Intelligence
 
@@ -208,13 +193,11 @@ An AI learning assistant that transforms large documents into structured study r
 
 <img src="https://img.shields.io/badge/AI_APIs-111827?style=for-the-badge"/>
 
-
 ### 💻 Backend
 
 <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python"/>
 
 <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask"/>
-
 
 ### 🌐 Frontend
 
@@ -224,18 +207,15 @@ An AI learning assistant that transforms large documents into structured study r
 
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript"/>
 
-
 ### 🗄️ Database
 
 <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql"/>
-
 
 </div>
 
 ---
 
-# 🌐 Let's Connect
-
+# 🌐 Let's Connect :-
 
 <p align="center">
 
@@ -252,7 +232,6 @@ An AI learning assistant that transforms large documents into structured study r
 </a>
 
 </p>
-
 
 ---
 
