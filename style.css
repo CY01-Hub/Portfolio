@@ -1109,17 +1109,36 @@ header.nav-hidden {
 .social-row {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
+
 .social-circle {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.6rem;
+
+  padding: 0.75rem 1.2rem;
+  border-radius: 999px;
+
+  background: transparent !important;
+  background-color: transparent !important;
+
   color: var(--text-main);
   text-decoration: none;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.social-circle i {
   font-size: 1.1rem;
+}
+
+.social-circle:hover {
+  transform: translateY(-3px);
 }
 
 .contact-form {
