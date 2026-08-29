@@ -1,246 +1,310 @@
+# 🌐 Dhrubo Dey — Personal Portfolio
+
+> A modern, responsive personal portfolio website showcasing my journey, technical skills, AI-powered projects, education, and development work.
+
 <div align="center">
 
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=28&duration=3000&pause=800&color=38BDF8&center=true&vCenter=true&width=700&lines=Hey,+I'm+Dhrubo+Dey+👋;AI+Application+Developer;Building+Intelligent+Systems;Exploring+AI+%7C+Backend+%7C+Cybersecurity" />
-
-<br>
-
-<h3>
-🤖 AI Builder • Python Developer • Backend Engineer • Future Cybersecurity Professional
-</h3>
-
-
-<p>
-Building intelligent applications that solve real-world problems using Artificial Intelligence.
-</p>
-
-
 <a href="https://cy01-hub.github.io/Portfolio/">
-<img src="https://img.shields.io/badge/Portfolio-Explore-2563EB?style=for-the-badge&logo=googlechrome&logoColor=white"/>
+<img src="https://img.shields.io/badge/🌐%20Live%20Portfolio-Visit%20Website-2563EB?style=for-the-badge"/>
 </a>
 
 <a href="https://github.com/CY01-Hub">
-<img src="https://img.shields.io/badge/GitHub-CY01--Hub-111827?style=for-the-badge&logo=github"/>
+<img src="https://img.shields.io/badge/GitHub-CY01--Hub-181717?style=for-the-badge&logo=github&logoColor=white"/>
 </a>
 
 <a href="https://www.linkedin.com/in/dhrubo-dey">
-<img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin"/>
+<img src="https://img.shields.io/badge/LinkedIn-Dhrubo%20Dey-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
 </a>
 
 </div>
 
+---
+
+## 📌 About the Project
+
+This repository contains the source code for my **personal portfolio website**, created to provide a central place to showcase my technical journey, projects, skills, education, and experience in software and AI development.
+
+The portfolio focuses on a clean, modern, and interactive experience while keeping the interface simple and easy to navigate.
+
+### 🎯 Main Objectives
+
+* Present my technical profile and development journey
+* Showcase AI-powered software projects
+* Highlight my backend and Python development skills
+* Provide information about my education and technical interests
+* Create a professional online presence
+* Provide an easy way to connect with me
 
 ---
 
-# 🧠 About Me :-
+## ✨ Website Features
 
-I am a Computer Science student passionate about building **AI-powered software solutions** that transform complex problems into simple, intelligent experiences.
+### 🏠 Home
 
-My focus is on creating practical AI systems using:
+A dedicated landing section introducing my profile, technical focus, and development direction.
 
-- Artificial Intelligence
-- Backend Development
-- Data Processing
-- Automation
-- Secure Software Practices
+### 👨‍💻 About Me
 
-Currently building AI platforms that combine intelligent analysis, structured data processing, and user-focused design.
+Provides an overview of my background, interests, development approach, and career direction.
 
----
+### 🎓 Education
 
-# 🚀 My AI Ecosystem :-
+Displays my academic journey and educational background.
 
-<table>
+### 🚀 Projects
 
-<tr>
+Showcases selected projects with descriptions, technologies, features, and project details.
 
-<td width="33%" align="center">
+### 🛠️ Skills & Technologies
 
-<h3>🩺 ClinixParse AI</h3>
+Highlights the technologies and development tools I work with across AI, backend, frontend, and databases.
 
-Medical Intelligence Platform
+### 📬 Contact
 
-AI-powered medical report analyzer that converts complex healthcare documents into simple, understandable insights.
+Provides direct ways to connect with me through my professional platforms.
 
-<br><br>
+### 📱 Responsive Interface
 
-<b>Focus:</b>
+The website is designed to provide a consistent experience across:
 
-Medical AI • Document Intelligence • Health Data
-
-</td>
-
-<td width="33%" align="center">
-
-<h3>🧭 PathForge AI</h3>
-
-Career Intelligence Platform
-
-AI career assistant that analyzes skills, identifies gaps, creates roadmaps, and prepares users for interviews.
-
-<br><br>
-
-<b>Focus:</b>
-
-Career AI • Skill Analysis • Personalization
-
-</td>
-
-<td width="33%" align="center">
-
-<h3>📓 Synthetix AI</h3>
-
-Learning Intelligence Platform
-
-AI-powered study assistant that converts documents into structured notes, flashcards, and revision material.
-
-<br><br>
-
-<b>Focus:</b>
-
-Educational AI • Knowledge Extraction • Learning
-
-</td>
-
-</tr>
-
-</table>
+* 💻 Desktop
+* 💻 Laptop
+* 📱 Mobile
+* 📟 Tablet
 
 ---
 
-# ⚡ Featured AI Projects :-
+# 🤖 Featured AI Projects
 
-<details>
+The portfolio currently highlights three major AI application projects.
 
-<summary><b>🩺 ClinixParse AI — Medical Report Analyzer</b></summary>
+## 🩺 ClinixParse AI
 
-<br>
+**Medical Intelligence Platform**
 
-An AI healthcare assistant designed to simplify medical documents.
+An AI-powered medical report analyzer designed to process complex medical documents and present important information in a structured and understandable format.
 
-### Features
+### Core Capabilities
 
-✔ Medical report understanding  
-✔ Important biomarker extraction  
-✔ Abnormal value detection  
-✔ Medical terminology explanation  
-✔ Structured health insights generation  
+* Medical document analysis
+* Important biomarker extraction
+* Abnormal value detection
+* Medical terminology explanation
+* Structured AI-generated insights
 
-### Technology
-
+**Technology:**
 `Python` `Flask` `Gemini API` `PDF Processing` `MySQL`
 
-</details>
+---
 
-<br>
+## 🧭 PathForge AI
 
-<details>
+**Career Intelligence Platform**
 
-<summary><b>🧭 PathForge AI — Career Strategy Platform</b></summary>
+An AI-powered career assistant designed to help users understand their skills, identify gaps, create personalized learning paths, and prepare for interviews.
 
-<br>
+### Core Capabilities
 
-An AI career guidance system that helps users understand their professional growth path.
+* Skill analysis
+* Skill-gap identification
+* Personalized career roadmap
+* Interview question generation
+* AI-powered career guidance
 
-### Features
-
-✔ Skill extraction  
-✔ Missing skill identification  
-✔ Personalized learning roadmap  
-✔ Interview question generation  
-✔ Structured AI responses  
-
-### Technology
-
+**Technology:**
 `Python` `Flask` `Gemini API` `NLP` `MySQL`
-
-</details>
-
-<br>
-
-<details>
-
-<summary><b>📓 Synthetix AI — Automated Notes Engine</b></summary>
-
-<br>
-
-An AI learning assistant that transforms large documents into structured study resources.
-
-### Features
-
-✔ AI-generated notes  
-✔ Topic breakdown  
-✔ Formula extraction  
-✔ Flashcards generation  
-✔ MCQ creation  
-✔ Revision sheets  
-
-
-### Technology
-
-`Python` `Flask` `Gemini API` `Document Processing` `MySQL`
-
-</details>
 
 ---
 
-# 🛠️ AI Development Stack :-
+## 📓 Synthetic AI
+
+**Learning Intelligence Platform**
+
+An AI-powered study assistant that transforms learning materials into structured educational resources.
+
+### Core Capabilities
+
+* AI-generated notes
+* Topic breakdown
+* Important concept extraction
+* Formula extraction
+* Flashcard generation
+* MCQ generation
+* Important question generation
+* Revision material
+
+**Technology:**
+`Python` `Flask` `Gemini API` `Document Processing` `MySQL`
+
+---
+
+# 🛠️ Technology Stack
 
 <div align="center">
 
-### 🤖 Artificial Intelligence
+### Frontend
 
-<img src="https://img.shields.io/badge/Google_Gemini-4285F4?style=for-the-badge&logo=google"/>
+<img src="https://skillicons.dev/icons?i=html,css,js" />
 
-<img src="https://img.shields.io/badge/AI_APIs-111827?style=for-the-badge"/>
+### Backend
 
-### 💻 Backend
+<img src="https://skillicons.dev/icons?i=python,flask" />
 
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python"/>
+### Database
 
-<img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask"/>
+<img src="https://skillicons.dev/icons?i=mysql" />
 
-### 🌐 Frontend
+### AI & Development
 
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5"/>
-
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3"/>
-
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript"/>
-
-### 🗄️ Database
-
-<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql"/>
+<img src="https://skillicons.dev/icons?i=git,github,vscode" />
 
 </div>
 
 ---
 
-# 🌐 Let's Connect :-
+# 🎨 Design Philosophy
 
-<p align="center">
+The portfolio follows a **modern developer-focused design approach** built around:
 
-<a href="https://www.linkedin.com/in/dhrubo-dey">
-<img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin"/>
-</a>
+* Minimal and clean layouts
+* Strong visual hierarchy
+* Modern typography
+* Interactive UI elements
+* Responsive components
+* Smooth transitions
+* Consistent spacing
+* Developer-oriented visual language
 
-<a href="https://cy01-hub.github.io/Portfolio/">
-<img src="https://img.shields.io/badge/Portfolio-Explore-2563EB?style=for-the-badge&logo=googlechrome"/>
-</a>
-
-<a href="https://github.com/CY01-Hub">
-<img src="https://img.shields.io/badge/GitHub-Follow-111827?style=for-the-badge&logo=github"/>
-</a>
-
-</p>
+The goal is to keep the interface visually engaging without sacrificing usability or performance.
 
 ---
 
-<p align="center">
+# 📂 Project Structure
 
-⚡ <b>Building intelligent systems today for a smarter tomorrow.</b>
+```text
+Portfolio/
+│
+├── index.html
+│
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   │
+│   ├── js/
+│   │   └── script.js
+│   │
+│   └── images/
+│
+├── README.md
+└── LICENSE
+```
+
+> The exact structure may evolve as the portfolio continues to be developed.
+
+---
+
+# 🚀 Run Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/CY01-Hub/Portfolio.git
+```
+
+Navigate to the project:
+
+```bash
+cd Portfolio
+```
+
+Open the website directly in your browser:
+
+```text
+index.html
+```
+
+Or run it using a local development server such as **VS Code Live Server**.
+
+---
+
+# 🌐 Live Deployment
+
+The portfolio is deployed using **GitHub Pages**.
+
+<div align="center">
+
+<a href="https://cy01-hub.github.io/Portfolio/">
+<img src="https://img.shields.io/badge/🚀%20Open%20Live%20Portfolio-2563EB?style=for-the-badge"/>
+</a>
+
+</div>
+
+---
+
+# 🔄 Development Workflow
+
+The portfolio is continuously improved through:
+
+```text
+Design
+   ↓
+Development
+   ↓
+Testing
+   ↓
+Optimization
+   ↓
+Deployment
+```
+
+New projects, technologies, UI improvements, and development milestones can be added as the portfolio evolves.
+
+---
+
+# 📈 Future Improvements
+
+Planned improvements may include:
+
+* [ ] More advanced project case studies
+* [ ] Improved project filtering
+* [ ] Interactive project demonstrations
+* [ ] Additional animations and micro-interactions
+* [ ] Performance optimization
+* [ ] Enhanced accessibility
+* [ ] Additional responsive improvements
+
+---
+
+# 📬 Connect
+
+If you'd like to explore my work or connect professionally:
+
+<div align="center">
+
+<a href="https://cy01-hub.github.io/Portfolio/">
+<img src="https://img.shields.io/badge/Portfolio-Visit-2563EB?style=for-the-badge&logo=googlechrome&logoColor=white"/>
+</a>
+
+<a href="https://github.com/CY01-Hub">
+<img src="https://img.shields.io/badge/GitHub-Explore-181717?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
+
+<a href="https://www.linkedin.com/in/dhrubo-dey">
+<img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
+
+</div>
+
+---
+
+<div align="center">
+
+### ⚡ Turning ideas into intelligent software.
 
 <br>
 
-⭐ Thanks for visiting my profile!
+**Built & maintained by Dhrubo Dey**
 
-</p>
+⭐ If you find the portfolio interesting, consider visiting the live website.
+
+</div>
