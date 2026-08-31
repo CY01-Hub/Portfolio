@@ -20,13 +20,13 @@
 
 ---
 
-## 📌 About the Project
+## 📌 About the Project :-
 
 This repository contains the source code for my **personal portfolio website**, created to provide a central place to showcase my technical journey, projects, skills, education, and experience in software and AI development.
 
 The portfolio focuses on a clean, modern, and interactive experience while keeping the interface simple and easy to navigate.
 
-### 🎯 Main Objectives
+### 🎯 Main Objectives -
 
 * Present my technical profile and development journey
 * Showcase AI-powered software projects
@@ -37,33 +37,33 @@ The portfolio focuses on a clean, modern, and interactive experience while keepi
 
 ---
 
-## ✨ Website Features
+## ✨ Website Features :-
 
-### 🏠 Home
+### 🏠 Home -
 
 A dedicated landing section introducing my profile, technical focus, and development direction.
 
-### 👨‍💻 About Me
+### 👨‍💻 About Me -
 
 Provides an overview of my background, interests, development approach, and career direction.
 
-### 🎓 Education
+### 🎓 Education -
 
 Displays my academic journey and educational background.
 
-### 🚀 Projects
+### 🚀 Projects -
 
 Showcases selected projects with descriptions, technologies, features, and project details.
 
-### 🛠️ Skills & Technologies
+### 🛠️ Skills & Technologies -
 
 Highlights the technologies and development tools I work with across AI, backend, frontend, and databases.
 
-### 📬 Contact
+### 📬 Contact -
 
 Provides direct ways to connect with me through my professional platforms.
 
-### 📱 Responsive Interface
+### 📱 Responsive Interface -
 
 The website is designed to provide a consistent experience across:
 
@@ -74,11 +74,11 @@ The website is designed to provide a consistent experience across:
 
 ---
 
-# 🤖 Featured AI Projects
+# 🤖 Featured AI Projects :-
 
 The portfolio currently highlights three major AI application projects.
 
-## 🩺 ClinixParse AI
+## 🩺 ClinixParse AI -
 
 **Medical Intelligence Platform**
 
@@ -97,7 +97,7 @@ An AI-powered medical report analyzer designed to process complex medical docume
 
 ---
 
-## 🧭 PathForge AI
+## 🧭 PathForge AI -
 
 **Career Intelligence Platform**
 
@@ -116,7 +116,7 @@ An AI-powered career assistant designed to help users understand their skills, i
 
 ---
 
-## 📓 Synthetic AI
+## 📓 Synthetic AI -
 
 **Learning Intelligence Platform**
 
@@ -138,7 +138,7 @@ An AI-powered study assistant that transforms learning materials into structured
 
 ---
 
-# 🛠️ Technology Stack
+# 🛠️ Technology Stack :-
 
 <div align="center">
 
@@ -162,7 +162,7 @@ An AI-powered study assistant that transforms learning materials into structured
 
 ---
 
-# 🎨 Design Philosophy
+# 🎨 Design Philosophy :-
 
 The portfolio follows a **modern developer-focused design approach** built around:
 
@@ -179,7 +179,7 @@ The goal is to keep the interface visually engaging without sacrificing usabilit
 
 ---
 
-# 📂 Project Structure
+# 📂 Project Structure :-
 
 ```text
 Portfolio/
@@ -203,7 +203,7 @@ Portfolio/
 
 ---
 
-# 🚀 Run Locally
+# 🚀 Run Locally :-
 
 Clone the repository:
 
@@ -227,7 +227,7 @@ Or run it using a local development server such as **VS Code Live Server**.
 
 ---
 
-# 🌐 Live Deployment
+# 🌐 Live Deployment :-
 
 The portfolio is deployed using **GitHub Pages**.
 
@@ -241,7 +241,7 @@ The portfolio is deployed using **GitHub Pages**.
 
 ---
 
-# 🔄 Development Workflow
+# 🔄 Development Workflow :-
 
 The portfolio is continuously improved through:
 
@@ -261,7 +261,7 @@ New projects, technologies, UI improvements, and development milestones can be a
 
 ---
 
-# 📈 Future Improvements
+# 📈 Future Improvements :-
 
 Planned improvements may include:
 
@@ -275,7 +275,7 @@ Planned improvements may include:
 
 ---
 
-# 📬 Connect
+# 📬 Connect :-
 
 If you'd like to explore my work or connect professionally:
 
