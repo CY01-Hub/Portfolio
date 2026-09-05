@@ -11,7 +11,7 @@
   --bg-main: #060b17;
   --bg-cards: rgba(13, 22, 43, 0.78);
   --primary: #0077ff;
-  --secondary: #00f0ff;
+  --secondary: #00f3ff;
   --text-main: #f0f6ff;
   --text-muted: #849cc6;
   --border-glass: rgba(0, 119, 255, 0.18);
@@ -583,6 +583,7 @@ section {
   background: var(--bg-cards);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
   border-radius: 12px;
 }
 
