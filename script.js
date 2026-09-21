@@ -1568,3 +1568,124 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.documentElement.style.overflowX = "hidden";
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.15
+  };
+
+  const revealOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target); // Reveal once
+      }
+    });
+  }, observerOptions);
+
+  // Apply to elements with scroll-reveal class
+  const revealElements = document.querySelectorAll(".scroll-reveal, .skill-category-block");
+  revealElements.forEach((el) => {
+    el.classList.add("fade-in-up");
+    revealOnScroll.observe(el);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Register GSAP ScrollTrigger Plugin
+  gsap.registerPlugin(ScrollTrigger);
+
+  // -----------------------------------------------------------------
+  // 1. Lenis Smooth Scroll Engine
+  // -----------------------------------------------------------------
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth inertia curve
+    smoothWheel: true,
+  });
+
+  // Keep Lenis and GSAP ScrollTrigger perfectly in sync
+  lenis.on("scroll", ScrollTrigger.update);
+
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
+
+  gsap.ticker.lagSmoothing(0);
+
+  // -----------------------------------------------------------------
+  // 2. Top Scroll Progress Line (Scroll-Linked Animation)
+  // -----------------------------------------------------------------
+  const progressBar = document.querySelector("#scroll-progress-bar");
+  if (progressBar) {
+    gsap.to(progressBar, {
+      scaleX: 1,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "body",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 0.3,
+      },
+    });
+  }
+
+  // -----------------------------------------------------------------
+  // 3. Scroll Trigger Entrance Animation (Cards Fade & Slide Up)
+  // -----------------------------------------------------------------
+  const cards = gsap.utils.toArray(".skill-category-block, .project-card, .glass");
+  cards.forEach((card) => {
+    gsap.fromTo(
+      card,
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: card,
+          start: "top 85%",
+          end: "top 60%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  });
+
+  // -----------------------------------------------------------------
+  // 4. Horizontal Scroll Effect for Projects Track
+  // -----------------------------------------------------------------
+  const track = document.querySelector(".horizontal-track");
+  if (track) {
+    gsap.to(track, {
+      x: () => -(track.scrollWidth - window.innerWidth),
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".horizontal-scroll-section",
+        start: "top top",
+        end: () => `+=${track.scrollWidth}`,
+        pin: true,
+        scrub: 1,
+        invalidateOnRefresh: true,
+      },
+    });
+  }
+
+  // -----------------------------------------------------------------
+  // 5. Pin Animation (Pins element while scrolling content)
+  // -----------------------------------------------------------------
+  const pinTarget = document.querySelector(".pin-target");
+  if (pinTarget) {
+    ScrollTrigger.create({
+      trigger: pinTarget,
+      start: "top center",
+      end: "+=150%",
+      pin: true,
+      pinSpacing: true,
+      scrub: true,
+    });
+  }
+});
