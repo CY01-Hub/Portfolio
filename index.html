@@ -620,8 +620,15 @@
     <section id="projects" class="projects-section">
       <div class="container">
         <h2 class="section-title scroll-reveal">Featured Projects</h2>
+        <!-- Project Category Filter Buttons -->
+        <div class="filter-container scroll-reveal">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="hackathon">Hackathon</button>
+          <button class="filter-btn" data-filter="cyber">Cyber Security</button>
+          <button class="filter-btn" data-filter="ai">AI & Machine Learning</button>
+        </div>
         <div class="projects-grid">
-          <div class="project-card glass glow-box scroll-reveal">
+          <div class="project-card glass glow-box scroll-reveal" data-category="hackathon cyber ai">
             <div class="proj-details">
               <div class="badge-wrapper">
                 <span class="badge gold-badge glow-box">
@@ -694,7 +701,7 @@
             </div>
           </div>
 
-          <div class="project-card glass glow-box scroll-reveal">
+          <div class="project-card glass glow-box scroll-reveal" data-category="ai">
             <div class="proj-details">
               <h3>
                 <img
@@ -761,7 +768,7 @@
             </div>
           </div>
 
-          <div class="project-card glass glow-box scroll-reveal">
+          <div class="project-card glass glow-box scroll-reveal" data-category="ai">
             <div class="proj-details">
               <h3>
                 <img
@@ -835,7 +842,7 @@
             </div>
           </div>
 
-          <div class="project-card glass glow-box scroll-reveal">
+          <div class="project-card glass glow-box scroll-reveal" data-category="ai">
             <div class="proj-details">
               <h3>
                 <img
@@ -903,7 +910,7 @@
             </div>
           </div>
 
-          <div class="project-card glass glow-box scroll-reveal">
+          <div class="project-card glass glow-box scroll-reveal" data-category="ai">
             <div class="proj-details">
               <h3>
                 <img
@@ -1125,10 +1132,16 @@
     <section id="certificates" class="projects-section">
       <div class="container">
         <h2 class="section-title scroll-reveal">Certificates</h2>
-
+        <!-- Certificate Category Filter Buttons -->
+        <div class="filter-container scroll-reveal">
+          <button class="filter-btn active" data-filter="all">All Certificates</button>
+          <button class="filter-btn" data-filter="nptel">NPTEL</button>
+          <button class="filter-btn" data-filter="cyber">Cyber Security</button>
+          <button class="filter-btn" data-filter="hackathon">Hackathon</button>
+        </div>
         <div class="projects-grid">
           <!-- Deloitte Cyber Security Job Simulation -->
-          <div class="project-card glass glow-box scroll-reveal">
+          <div class="project-card glass glow-box scroll-reveal" data-category="cyber">
             <div class="proj-details">
               <span class="edu-year">
                 <i class="fas fa-calendar-alt"></i> Sep 2026
@@ -1182,7 +1195,7 @@
           </div>
 
           <!-- Internal Smart India Hackathon 2026 -->
-          <div class="project-card glass glow-box scroll-reveal">
+          <div class="project-card glass glow-box scroll-reveal" data-category="hackathon cyber">
             <div class="proj-details">
               <span class="edu-year">
                 <i class="fas fa-calendar-alt"></i> 21st Aug 2026
@@ -1239,7 +1252,7 @@
           </div>
 
           <!-- Programming in Java -->
-          <div class="project-card glass glow-box scroll-reveal">
+          <div class="project-card glass glow-box scroll-reveal" data-category="nptel">
             <div class="proj-details">
               <span class="edu-year">
                 <i class="fas fa-calendar-alt"></i> Jan - Apr 2026
@@ -1299,7 +1312,7 @@
           </div>
 
           <!-- Data Structures & Algorithms -->
-          <div class="project-card glass glow-box scroll-reveal">
+          <div class="project-card glass glow-box scroll-reveal" data-category="nptel">
             <div class="proj-details">
               <span class="edu-year">
                 <i class="fas fa-calendar-alt"></i> Jul - Oct 2025
@@ -1363,7 +1376,7 @@
           </div>
 
           <!-- Problem Solving in C -->
-          <div class="project-card glass glow-box scroll-reveal">
+          <div class="project-card glass glow-box scroll-reveal" data-category="nptel">
             <div class="proj-details">
               <span class="edu-year">
                 <i class="fas fa-calendar-alt"></i> Jan - Apr 2025

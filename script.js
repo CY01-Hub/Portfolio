@@ -1689,3 +1689,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("#projects, #certificates");
+
+  sections.forEach((section) => {
+    const filterBtns = section.querySelectorAll(".filter-btn");
+    const cards = section.querySelectorAll(".project-card");
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        // Remove active state from current section's buttons
+        filterBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filterValue = btn.getAttribute("data-filter");
+
+        cards.forEach((card) => {
+          const categories = card.getAttribute("data-category") ? card.getAttribute("data-category").split(" ") : [];
+
+          if (filterValue === "all" || categories.includes(filterValue)) {
+            card.classList.remove("hide-card");
+            card.classList.add("fade-in");
+            setTimeout(() => card.classList.remove("fade-in"), 400);
+          } else {
+            card.classList.add("hide-card");
+          }
+        });
+
+        // Trigger ScrollTrigger / AOS recalculation if enabled
+        if (window.ScrollTrigger) {
+          ScrollTrigger.refresh();
+        }
+      });
+    });
+  });
+});
