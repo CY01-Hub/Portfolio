@@ -265,11 +265,11 @@ New projects, technologies, UI improvements, and development milestones can be a
 
 Planned improvements may include:
 
-* [ ] More advanced project case studies
-* [ ] Improved project filtering
+* [x] More advanced project case studies
+* [x] Improved project filtering
 * [ ] Interactive project demonstrations
-* [ ] Additional animations and micro-interactions
-* [ ] Performance optimization
+* [x] Additional animations and micro-interactions
+* [x] Performance optimization
 * [ ] Enhanced accessibility
 * [ ] Additional responsive improvements
 
