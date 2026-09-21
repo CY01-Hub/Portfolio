@@ -2442,3 +2442,28 @@ html.lenis body {
     transform: scale(1) translateY(0);
   }
 }
+
+/* --- Custom Scrollbar with Matching Progress Bar Gradient --- */
+
+/* Width and height of the scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Scrollbar Track (Dark Glass Background) */
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+/* Scrollbar Thumb (Exact Horizontal Blue-to-Cyan Gradient) */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0066ff 0%, #00c8ff 60%, #00e5ff 100%);
+  border-radius: 20px;
+  filter: drop-shadow(0px 0px 4px rgba(0, 200, 255, 0.8));
+}
+
+/* Scrollbar Thumb Hover State */
+::-webkit-scrollbar-thumb:hover {
+  filter: drop-shadow(0px 0px 8px rgba(0, 229, 255, 1));
+}
