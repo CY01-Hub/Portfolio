@@ -21,16 +21,22 @@
 }
 
 [data-theme="light"] {
-  --bg-main: #cae8ef;
-  --bg-cards: rgba(255, 255, 255, 0.88);
-  --primary: #0055cc;
-  --secondary: #00a8e8;
-  --text-main: #0a1428;
-  --text-muted: #4e6385;
-  --border-glass: rgba(0, 85, 204, 0.14);
-  --bg-navbar: rgba(237, 244, 255, 0.9);
-  --shadow-premium: 0 20px 40px rgba(10, 20, 40, 0.08);
-  --glow-color: rgba(0, 85, 204, 0.25);
+  --bg-main: #f5f7fb;
+  --bg-cards: #ffffff;
+
+  --primary: #2563eb;
+  --secondary: #3b82f6;
+
+  --text-main: #0f172a;
+  --text-muted: #475569;
+
+  --border-glass: #e2e8f0;
+
+  --bg-navbar: rgba(255, 255, 255, 0.94);
+
+  --shadow-premium: 0 12px 30px rgba(15, 23, 42, 0.06);
+
+  --glow-color: rgba(37, 99, 235, 0.16);
 }
 
 html {
@@ -2141,8 +2147,10 @@ section:has(.section-title.revealed)::before {
 .badge-pill {
   font-size: 0.75rem;
   font-weight: 500;
-  letter-spacing: 0.02em;
-  padding: 0.15rem 0.65rem;
+  letter-spacing: 0.1em;
+  padding: 0.4rem 1.25rem;
+  min-width: 120px;
+  text-align: center;
   border-radius: 9999px;
   background-color: transparent;
   display: inline-block;
@@ -2150,25 +2158,61 @@ section:has(.section-title.revealed)::before {
   transition: all 0.3s ease;
 }
 
-.badge-green {
-  color: #10b981;
-  border: 1px solid #10b981;
+/* =========================================================
+   SKILL LEVEL BADGES
+   ========================================================= */
+
+.badge-pill {
+  border-width: 1px;
+  border-style: solid;
 }
+
+/* ADVANCED */
+.badge-green {
+  color: #ffffff !important;
+  background: rgba(34, 197, 94, 0.14) !important;
+  border-color: #22c55e !important;
+}
+
+/* INTERMEDIATE */
+.badge-yellow {
+  color: #ffffff !important;
+  background: rgba(245, 158, 11, 0.14) !important;
+  border-color: #f59e0b !important;
+}
+
+/* =========================================================
+   LIGHT THEME
+   ========================================================= */
+
+[data-theme="light"] .badge-green {
+  color: #000000 !important;
+  background: rgba(34, 197, 94, 0.12) !important;
+  border-color: #22c55e !important;
+}
+
+[data-theme="light"] .badge-yellow {
+  color: #000000 !important;
+  background: rgba(245, 158, 11, 0.12) !important;
+  border-color: #f59e0b !important;
+}
+
+/* =========================================================
+   HOVER
+   ========================================================= */
 
 .badge-green:hover {
-  box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
-  background-color: rgba(16, 185, 129, 0.05);
-}
-
-.badge-yellow {
-  color: #f59e0b;
-  border: 1px solid #f59e0b;
+  background: rgba(34, 197, 94, 0.22) !important;
+  border-color: #22c55e !important;
+  transform: scale(1.05);
 }
 
 .badge-yellow:hover {
-  box-shadow: 0 0 8px rgba(245, 158, 11, 0.5);
-  background-color: rgba(245, 158, 11, 0.05);
+  background: rgba(245, 158, 11, 0.22) !important;
+  border-color: #f59e0b !important;
+  transform: scale(1.05);
 }
+
 /* ==========================================================================
    1. Interactive Card Hover Effects & Dynamic Borders
    ========================================================================== */
@@ -2393,23 +2437,25 @@ html.lenis body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: 1rem;
   margin-bottom: 2.5rem;
 }
 
 /* 1. Default Idle State: Forces exact dim border as Phonemex AI card */
 .filter-btn {
   background: rgba(15, 23, 42, 0.6) !important;
-  color: var(--text-muted, #94a3b8) !important;
+  color: #cbd5e1 !important;
   border: 1px solid rgba(0, 162, 255, 0.352) !important;
-  padding: 0.65rem 1.5rem;
+  padding: 0.7rem 1.8rem;
+  min-width: 130px;
+  text-align: center;
   border-radius: 50px;
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  box-shadow: none !important; /* Removes lingering default glow */
+  box-shadow: none !important;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -2419,8 +2465,48 @@ html.lenis body {
   color: #ffffff !important;
   background: rgba(15, 23, 42, 0.85) !important;
   border-color: #1d4ed8 !important; /* Electric blue ring on hover/active */
-  box-shadow: 0 0 15px rgba(29, 78, 216, 0.5), inset 0 0 8px rgba(29, 78, 216, 0.25) !important;
+  box-shadow:
+    0 0 15px rgba(29, 78, 216, 0.5),
+    inset 0 0 8px rgba(29, 78, 216, 0.25) !important;
   transform: translateY(-2px);
+}
+
+/* --- Light Theme Fix for Filter Buttons & Clean Background --- */
+
+/* 1. Canvas lines ko light mode me clean/soft karne ke liye */
+body.light-theme #bgCanvas,
+body.light-theme canvas,
+[data-theme="light"] #bgCanvas,
+[data-theme="light"] canvas {
+  opacity: 0.12 !important; /* Network lines fade ho jayengi, clean look milega */
+}
+
+/* 2. Container to isolate buttons from background elements */
+body.light-theme .filter-container,
+[data-theme="light"] .filter-container {
+  position: relative;
+  z-index: 5; /* Ensures buttons stay crisp on top of background canvas */
+}
+
+/* 3. Idle Button State */
+body.light-theme .filter-btn,
+[data-theme="light"] .filter-btn {
+  background: #ffffff !important;               /* Solid white fill */
+  color: #1e293b !important;                    /* High contrast dark text */
+  border: 1px solid #cbd5e1 !important;         /* Crisp light border */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* 4. Hover & Active State */
+body.light-theme .filter-btn:hover,
+body.light-theme .filter-btn.active,
+[data-theme="light"] .filter-btn:hover,
+[data-theme="light"] .filter-btn.active {
+  background: #ffffff !important;               /* Clean white background */
+  color: #1e293b !important;                    /* Dark slate text so it remains visible */
+  border: 1.5px solid #3b82f6 !important;        /* Bright blue border ring */
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.4) !important; /* Soft blue glowing aura */
+  transform: translateY(-1px);
 }
 
 /* Card Show/Hide Animations */
@@ -2467,3 +2553,240 @@ html.lenis body {
 ::-webkit-scrollbar-thumb:hover {
   filter: drop-shadow(0px 0px 8px rgba(0, 229, 255, 1));
 }
+
+/* =========================================================
+   PREMIUM LIGHT THEME
+   ========================================================= */
+
+[data-theme="light"] body {
+  background: #f5f7fb;
+  color: #0f172a;
+}
+
+/* Navbar */
+[data-theme="light"] #navbar {
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+}
+
+/* Main Glass / Cards */
+[data-theme="light"] .glass,
+[data-theme="light"] .f-card,
+[data-theme="light"] .project-card,
+[data-theme="light"] .skill-category-block,
+[data-theme="light"] .timeline-card {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.055);
+  backdrop-filter: blur(12px);
+}
+
+/* Card hover */
+[data-theme="light"] .glass:hover,
+[data-theme="light"] .f-card:hover,
+[data-theme="light"] .project-card:hover,
+[data-theme="light"] .skill-category-block:hover,
+[data-theme="light"] .timeline-card:hover {
+  border-color: rgba(37, 99, 235, 0.3);
+  box-shadow:
+    0 14px 32px rgba(15, 23, 42, 0.08),
+    0 0 18px rgba(37, 99, 235, 0.07);
+}
+
+/* Card headings */
+[data-theme="light"] .f-card h4,
+[data-theme="light"] .project-card h3,
+[data-theme="light"] .category-title,
+[data-theme="light"] .timeline-card h3 {
+  color: #0f172a;
+}
+
+/* Normal paragraph text */
+[data-theme="light"] .f-card p,
+[data-theme="light"] .project-card p,
+[data-theme="light"] .intro-p,
+[data-theme="light"] .edu-details {
+  color: #475569;
+}
+
+/* Strong text */
+[data-theme="light"] strong {
+  color: #1e293b;
+}
+
+/* Section headings */
+[data-theme="light"] .section-title,
+[data-theme="light"] .sub-heading {
+  color: #0f172a;
+}
+
+/* Core competency tags */
+[data-theme="light"] .tag {
+  background: #ffffff;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+}
+
+[data-theme="light"] .tag:hover {
+  background: #f8fafc;
+  border-color: #bfdbfe;
+  color: #2563eb;
+}
+
+/* Technical proficiency rows */
+[data-theme="light"] .skill-entry {
+  color: #334155;
+}
+
+[data-theme="light"] .skill-entry:hover {
+  background: #eff6ff;
+}
+
+[data-theme="light"] .skill-info span {
+  color: #334155;
+}
+
+/* Category separator */
+[data-theme="light"] .skill-category-block .category-title {
+  border-bottom-color: #e2e8f0;
+}
+
+/* Blue icons */
+[data-theme="light"] .icon-blue,
+[data-theme="light"] .icon-accent {
+  color: #2563eb;
+}
+
+/* Advanced */
+[data-theme="light"] .badge-green {
+  color: #16a34a;
+  border-color: #22c55e;
+  background: #f0fdf4;
+}
+
+/* Intermediate */
+[data-theme="light"] .badge-yellow {
+  color: #d97706;
+  border-color: #f59e0b;
+  background: #fffbeb;
+}
+
+/* Badge hover */
+[data-theme="light"] .badge-green:hover {
+  background: #dcfce7;
+}
+
+[data-theme="light"] .badge-yellow:hover {
+  background: #fef3c7;
+}
+
+/* Project technology pills */
+[data-theme="light"] .proj-stack span {
+  background: #f8fafc;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+}
+
+[data-theme="light"] .proj-stack span:hover {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #2563eb;
+}
+
+/* Buttons */
+[data-theme="light"] .btn-primary {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+[data-theme="light"] .btn-secondary {
+  background: #ffffff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+/* Theme toggle */
+[data-theme="light"] .theme-toggle {
+  background: #ffffff;
+  color: #2563eb;
+  border: 1px solid #e2e8f0;
+}
+
+/* Navigation links */
+[data-theme="light"] .nav-link {
+  color: #334155;
+}
+
+[data-theme="light"] .nav-link:hover,
+[data-theme="light"] .nav-link.active {
+  color: #2563eb;
+}
+
+/* Contact information */
+[data-theme="light"] .info-item {
+  background: #ffffff;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+}
+
+/* Contact form */
+[data-theme="light"] .contact-form {
+  background: #ffffff;
+}
+
+[data-theme="light"] .input-group input,
+[data-theme="light"] .input-group textarea {
+  background: #f8fafc;
+  color: #0f172a;
+  border-color: #e2e8f0;
+}
+
+[data-theme="light"] .input-group input:focus,
+[data-theme="light"] .input-group textarea:focus {
+  border-color: #2563eb;
+}
+
+/* Education badges */
+[data-theme="light"] .edu-badge {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+/* Education year */
+[data-theme="light"] .edu-year {
+  color: #2563eb;
+}
+
+/* Social buttons */
+[data-theme="light"] .social-circle {
+  background: #ffffff;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+}
+
+[data-theme="light"] .social-circle:hover {
+  color: #2563eb;
+  border-color: #bfdbfe;
+}
+
+/* Back to top */
+[data-theme="light"] .back-to-top {
+  background: #ffffff;
+  color: #2563eb;
+  border: 1px solid #e2e8f0;
+}
+
+/* Footer */
+[data-theme="light"] footer {
+  background: #eef2f7;
+  color: #475569;
+}
+
+[data-theme="light"] .footer-divider {
+  border-color: #dde3ec;
+}
+
