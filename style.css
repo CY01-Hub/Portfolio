@@ -2636,9 +2636,15 @@ body.light-theme .filter-btn.active,
   color: #2563eb;
 }
 
-/* Technical proficiency rows */
+/* Technical proficiency rows & separation lines fix */
 [data-theme="light"] .skill-entry {
   color: #334155;
+  border-bottom: 1px solid #e2e8f0 !important; /* Forces visible separation line in light mode */
+  padding: 0.85rem 0.5rem;                    /* Comfortable vertical spacing */
+}
+
+[data-theme="light"] .skill-entry:last-child {
+  border-bottom: none !important;              /* Prevents double border on bottom item */
 }
 
 [data-theme="light"] .skill-entry:hover {
@@ -2649,9 +2655,11 @@ body.light-theme .filter-btn.active,
   color: #334155;
 }
 
-/* Category separator */
+/* Category separator header */
 [data-theme="light"] .skill-category-block .category-title {
-  border-bottom-color: #e2e8f0;
+  border-bottom: 1px solid #e2e8f0 !important;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Blue icons */
@@ -2660,27 +2668,61 @@ body.light-theme .filter-btn.active,
   color: #2563eb;
 }
 
-/* Advanced */
-[data-theme="light"] .badge-green {
-  color: #16a34a;
-  border-color: #22c55e;
-  background: #f0fdf4;
+/* Stretched & Comfortable Level Badges */
+[data-theme="light"] .badge-green,
+[data-theme="light"] .badge-yellow {
+  padding: 0.45rem 1.25rem !important;        /* Increased inner side padding */
+  min-width: 125px !important;                 /* Stretches pill so text isn't cramped */
+  text-align: center;
+  display: inline-block;
+  border-radius: 50px;
+  font-weight: 500;
 }
 
-/* Intermediate */
+/* Advanced Badge */
+[data-theme="light"] .badge-green {
+  color: #16a34a !important;
+  border: 1px solid #22c55e !important;
+  background: #f0fdf4 !important;
+}
+
+/* Intermediate Badge */
 [data-theme="light"] .badge-yellow {
-  color: #d97706;
-  border-color: #f59e0b;
-  background: #fffbeb;
+  color: #d97706 !important;
+  border: 1px solid #f59e0b !important;
+  background: #fffbeb !important;
 }
 
 /* Badge hover */
 [data-theme="light"] .badge-green:hover {
-  background: #dcfce7;
+  background: #dcfce7 !important;
 }
 
 [data-theme="light"] .badge-yellow:hover {
-  background: #fef3c7;
+  background: #fef3c7 !important;
+}
+
+/* Filter Buttons (Pill Filters) */
+[data-theme="light"] .filter-btn {
+  background: #ffffff !important;
+  color: #334155 !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .filter-btn:hover,
+[data-theme="light"] .filter-btn.active {
+  background: #ffffff !important;
+  color: #1e293b !important;
+  border: 1.5px solid #3b82f6 !important;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.35) !important;
+  transform: translateY(-1px);
+}
+
+/* Background Canvas Opacity in Light Theme */
+[data-theme="light"] #bgCanvas,
+[data-theme="light"] canvas {
+  opacity: 0.12 !important;
 }
 
 /* Project technology pills */
@@ -2789,4 +2831,3 @@ body.light-theme .filter-btn.active,
 [data-theme="light"] .footer-divider {
   border-color: #dde3ec;
 }
-
