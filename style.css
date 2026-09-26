@@ -1202,6 +1202,63 @@ header.nav-hidden {
   color: #fff;
 }
 
+/* Project Links Container */
+.proj-links {
+  display: flex;
+  flex-direction: column; /* Vertical alignment */
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+/* Base Styles for Action Buttons */
+.btn-project-action {
+  width: 100%; /* Full width of card */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+
+/* 1. View Project PDF Button (#00f3ff Theme) */
+.btn-pdf-link {
+  background: rgba(0, 243, 255, 0.08);
+  color: #00f3ff;
+  border: 1px solid rgba(0, 243, 255, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+.btn-pdf-link:hover {
+  background: rgba(0, 243, 255, 0.2);
+  color: #ffffff;
+  border-color: #00f3ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 243, 255, 0.35);
+}
+
+/* 2. Source Code Button */
+.btn-source-link {
+  background: rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+  border: 1px solid rgba(22, 135, 247, 0.929);
+  backdrop-filter: blur(8px);
+}
+
+.btn-source-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+}
+
 .proj-stack {
   display: flex;
   flex-wrap: wrap;
