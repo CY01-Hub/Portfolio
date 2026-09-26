@@ -3014,3 +3014,48 @@ body.light-theme .filter-btn.active,
 [data-theme="light"] .footer-divider {
   border-color: #dde3ec;
 }
+
+/* Project / Certificate Links Container */
+.proj-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+/* Base Style for Certificate Action Button */
+.btn-cert-link {
+  width: 100%; /* Spans full width of the certificate card */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  background: rgba(0, 243, 255, 0.08);
+  color: #00f3ff;
+  border: 1px solid rgba(22, 135, 247, 0.929);
+  backdrop-filter: blur(8px);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+
+.btn-cert-link:hover {
+  background: rgba(0, 243, 255, 0.2);
+  color: #ffffff;
+  border-color: #00f3ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 243, 255, 0.35);
+}
+
+.btn-cert-link i {
+  transition: transform 0.25s ease;
+}
+
+.btn-cert-link:hover i {
+  transform: scale(1.15);
+}
