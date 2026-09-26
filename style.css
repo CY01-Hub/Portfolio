@@ -865,7 +865,9 @@ header.nav-hidden {
 
 /* Eye Icon Pulse & Lift */
 .btn-view .icon-eye {
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 
 .btn-view:hover .icon-eye {
@@ -875,7 +877,12 @@ header.nav-hidden {
 
 /* 3. Contact Me: Dark Theme Base with Right-to-Left Diagonal Sheen */
 .btn-contact {
-  background: rgba(15, 23, 42, 0.8); /* Dark background matching portfolio theme */
+  background: rgba(
+    15,
+    23,
+    42,
+    0.8
+  ); /* Dark background matching portfolio theme */
   color: #f8fafc;
   border: 1px solid rgba(22, 135, 247, 0.929);
   backdrop-filter: blur(10px);
@@ -2657,11 +2664,10 @@ html.lenis body {
 /* --- Light Theme Fix for Filter Buttons & Clean Background --- */
 
 /* 1. Canvas lines ko light mode me clean/soft karne ke liye */
-body.light-theme #bgCanvas,
+body.light-theme #bg-Canvas,
 body.light-theme canvas,
-[data-theme="light"] #bgCanvas,
-[data-theme="light"] canvas {
-  opacity: 0.12 !important; /* Network lines fade ho jayengi, clean look milega */
+[data-theme="light"] #bg-canvas {
+  opacity: 0.38 !important;
 }
 
 /* 2. Container to isolate buttons from background elements */
@@ -2902,12 +2908,6 @@ body.light-theme .filter-btn.active,
   transform: translateY(-1px);
 }
 
-/* Background Canvas Opacity in Light Theme */
-[data-theme="light"] #bgCanvas,
-[data-theme="light"] canvas {
-  opacity: 0.12 !important;
-}
-
 /* Project technology pills */
 [data-theme="light"] .proj-stack span {
   background: #f8fafc;
@@ -3058,4 +3058,410 @@ body.light-theme .filter-btn.active,
 
 .btn-cert-link:hover i {
   transform: scale(1.15);
+}
+
+/* =========================================================
+   LIGHT THEME — HERO BUTTONS
+   ========================================================= */
+
+/* -------------------------
+   DOWNLOAD RESUME
+   ------------------------- */
+
+[data-theme="light"] .btn-primary {
+  background: linear-gradient(
+    135deg,
+    #22d3ee 0%,
+    #2563eb 55%,
+    #1d4ed8 100%
+  ) !important;
+
+  color: #ffffff !important;
+  border: 1px solid #38bdf8 !important;
+
+  box-shadow:
+    0 6px 18px rgba(37, 99, 235, 0.25),
+    0 0 12px rgba(34, 211, 238, 0.15);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+[data-theme="light"] .btn-primary:hover {
+  transform: translateY(-3px);
+
+  background: linear-gradient(
+    135deg,
+    #06b6d4 0%,
+    #2563eb 50%,
+    #1e40af 100%
+  ) !important;
+
+  color: #ffffff !important;
+
+  box-shadow:
+    0 10px 28px rgba(37, 99, 235, 0.35),
+    0 0 20px rgba(34, 211, 238, 0.25);
+
+  filter: brightness(1.04);
+}
+
+[data-theme="light"] .btn-primary:active {
+  transform: translateY(-1px);
+}
+
+/* -------------------------
+   VIEW RESUME
+   ------------------------- */
+
+[data-theme="light"] .btn-view {
+  background: #ffffff !important;
+  color: #2563eb !important;
+
+  border: 1px solid #60a5fa !important;
+
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+[data-theme="light"] .btn-view:hover {
+  transform: translateY(-3px);
+
+  background: #eff6ff !important;
+  color: #1d4ed8 !important;
+
+  border-color: #2563eb !important;
+
+  box-shadow:
+    0 8px 22px rgba(37, 99, 235, 0.18),
+    0 0 14px rgba(59, 130, 246, 0.12);
+}
+
+[data-theme="light"] .btn-view .icon-eye {
+  color: #2563eb !important;
+}
+
+/* -------------------------
+   CONTACT ME
+   ------------------------- */
+
+[data-theme="light"] .btn-contact {
+  background: #ffffff !important;
+  color: #172033 !important;
+
+  border: 1px solid #2563eb !important;
+
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+[data-theme="light"] .btn-contact:hover {
+  transform: translateY(-3px);
+
+  background: #eff6ff !important;
+  color: #1d4ed8 !important;
+
+  border-color: #2563eb !important;
+
+  box-shadow:
+    0 8px 22px rgba(37, 99, 235, 0.18),
+    0 0 14px rgba(59, 130, 246, 0.12);
+}
+
+[data-theme="light"] .btn-contact i {
+  color: #2563eb !important;
+}
+
+[data-theme="light"] .btn-contact:hover i {
+  color: #1d4ed8 !important;
+}
+
+/* Fix Contact Me text in light theme */
+[data-theme="light"] .btn-contact,
+[data-theme="light"] .btn-contact span {
+  color: #1351d7 !important;
+}
+
+[data-theme="light"] .btn-contact i {
+  color: #2563eb !important;
+}
+
+[data-theme="light"] .btn-contact:hover,
+[data-theme="light"] .btn-contact:hover span {
+  color: #1d4ed8 !important;
+}
+
+[data-theme="light"] .btn-contact:hover i {
+  color: #1d4ed8 !important;
+}
+
+/* ---------------------------------------------------------
+   HERO BUTTONS
+   --------------------------------------------------------- */
+
+/* Download Resume */
+[data-theme="light"] .btn-primary {
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  color: #ffffff !important;
+  border: 1px solid #2563eb;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.2);
+}
+
+[data-theme="light"] .btn-primary:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+  color: #ffffff !important;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+/* View Resume */
+[data-theme="light"] .btn-view {
+  background: #ffffff;
+  color: #2563eb !important;
+  border: 1px solid #60a5fa;
+  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.08);
+}
+
+[data-theme="light"] .btn-view:hover {
+  background: #eff6ff;
+  color: #1d4ed8 !important;
+  border-color: #2563eb;
+  box-shadow: 0 0 18px rgba(37, 99, 235, 0.2);
+}
+
+[data-theme="light"] .btn-view .icon-eye {
+  color: #2563eb;
+}
+
+/* Contact Me */
+[data-theme="light"] .btn-contact {
+  background: #172033;
+  color: #ffffff !important;
+  border: 1px solid #2563eb;
+  box-shadow: 0 5px 15px rgba(15, 23, 42, 0.12);
+}
+
+[data-theme="light"] .btn-contact:hover {
+  background: #1e293b;
+  color: #ffffff !important;
+  border-color: #3b82f6;
+  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.2);
+}
+
+/* ---------------------------------------------------------
+   PROJECT / CERTIFICATE BUTTONS
+   --------------------------------------------------------- */
+
+/* Common */
+[data-theme="light"] .btn-project-action {
+  color: #2563eb !important;
+  font-weight: 600;
+}
+
+/* View Project PDF */
+[data-theme="light"] .btn-pdf-link {
+  background: #eff6ff !important;
+  color: #2563eb !important;
+  border: 1px solid #60a5fa !important;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+}
+
+[data-theme="light"] .btn-pdf-link:hover {
+  background: #dbeafe !important;
+  color: #1d4ed8 !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.2);
+}
+
+/* Source Code */
+[data-theme="light"] .btn-source-link {
+  background: #ffffff !important;
+  color: #334155 !important;
+  border: 1px solid #60a5fa !important;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.06);
+}
+
+[data-theme="light"] .btn-source-link:hover {
+  background: #eff6ff !important;
+  color: #1e3a8a !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.16);
+}
+
+/* View Certificate */
+[data-theme="light"] .btn-cert-link {
+  background: #eff6ff !important;
+  color: #2563eb !important;
+  border: 1px solid #60a5fa !important;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+}
+
+[data-theme="light"] .btn-cert-link:hover {
+  background: #dbeafe !important;
+  color: #1d4ed8 !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.2);
+}
+
+/* ---------------------------------------------------------
+   PROJECT / CERTIFICATE BUTTON ICONS
+   --------------------------------------------------------- */
+
+[data-theme="light"] .btn-pdf-link i,
+[data-theme="light"] .btn-cert-link i {
+  color: #2563eb !important;
+}
+
+[data-theme="light"] .btn-pdf-link:hover i,
+[data-theme="light"] .btn-cert-link:hover i {
+  color: #1d4ed8 !important;
+}
+
+[data-theme="light"] .btn-source-link i {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .btn-source-link:hover i {
+  color: #2563eb !important;
+}
+
+/* ---------------------------------------------------------
+   FILTER BUTTONS
+   --------------------------------------------------------- */
+
+[data-theme="light"] .filter-btn {
+  background: #ffffff !important;
+  color: #334155 !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: 0 2px 7px rgba(15, 23, 42, 0.06) !important;
+}
+
+[data-theme="light"] .filter-btn:hover,
+[data-theme="light"] .filter-btn.active {
+  background: #eff6ff !important;
+  color: #1d4ed8 !important;
+  border-color: #3b82f6 !important;
+  box-shadow:
+    0 4px 14px rgba(37, 99, 235, 0.14),
+    0 0 12px rgba(59, 130, 246, 0.12) !important;
+  transform: translateY(-2px);
+}
+
+/* ---------------------------------------------------------
+   LIGHT THEME CANVAS
+   --------------------------------------------------------- */
+
+[data-theme="light"] #bg-canvas {
+  opacity: 0.38 !important;
+}
+
+/* ---------------------------------------------------------
+   PROJECT TECHNOLOGY PILLS
+   --------------------------------------------------------- */
+
+[data-theme="light"] .proj-stack span {
+  background: #f8fafc !important;
+  color: #334155 !important;
+  border: 1px solid #dbe4ef !important;
+}
+
+[data-theme="light"] .proj-stack span:hover {
+  background: #eff6ff !important;
+  color: #2563eb !important;
+  border-color: #93c5fd !important;
+}
+
+/* =========================================================
+   LIGHT THEME — CYBER BACKGROUND
+   Keep the same animated network feeling as dark theme
+   ========================================================= */
+
+/* Main page background */
+[data-theme="light"] body {
+  background:
+    radial-gradient(
+      circle at 18% 18%,
+      rgba(59, 130, 246, 0.13),
+      transparent 30%
+    ),
+    radial-gradient(circle at 78% 58%, rgba(6, 182, 212, 0.1), transparent 32%),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(37, 99, 235, 0.07),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #f8fbff 0%, #f3f7fc 48%, #edf4fa 100%) !important;
+
+  position: relative;
+}
+
+/* Keep canvas visible */
+[data-theme="light"] #bg-canvas {
+  opacity: 1 !important;
+}
+
+/* DO NOT fade every canvas globally */
+[data-theme="light"] canvas {
+  opacity: 1;
+}
+
+/* Soft ambient glow behind the whole interface */
+[data-theme="light"] body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+  z-index: -2;
+
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(37, 99, 235, 0.08),
+      transparent 25%
+    ),
+    radial-gradient(circle at 80% 65%, rgba(6, 182, 212, 0.07), transparent 28%);
+
+  animation: lightAmbientPulse 10s ease-in-out infinite alternate;
+}
+
+/* Subtle moving light */
+@keyframes lightAmbientPulse {
+  0% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.025);
+  }
+
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+}
+
+/* Make the animated technical network readable */
+[data-theme="light"] #bg-canvas {
+  filter: saturate(1.15) contrast(1.08);
+}
+
+/* Preserve the network behind content */
+[data-theme="light"] .background-system,
+[data-theme="light"] #bg-canvas {
+  pointer-events: none;
 }
