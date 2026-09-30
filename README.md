@@ -183,20 +183,10 @@ The goal is to keep the interface visually engaging without sacrificing usabilit
 
 ```text
 Portfolio/
-│
 ├── index.html
-│
-├── assets/
-│   ├── css/
-│   │   └── style.css
-│   │
-│   ├── js/
-│   │   └── script.js
-│   │
-│   └── images/
-│
-├── README.md
-└── LICENSE
+├── style.css
+├── script.js
+└── README.md
 ```
 
 > The exact structure may evolve as the portfolio continues to be developed.
