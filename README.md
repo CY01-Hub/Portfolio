@@ -84,7 +84,7 @@ The portfolio currently highlights three major AI application projects.
 
 An AI-powered medical report analyzer designed to process complex medical documents and present important information in a structured and understandable format.
 
-### Core Capabilities
+### Core Capabilities :
 
 * Medical document analysis
 * Important biomarker extraction
@@ -103,7 +103,7 @@ An AI-powered medical report analyzer designed to process complex medical docume
 
 An AI-powered career assistant designed to help users understand their skills, identify gaps, create personalized learning paths, and prepare for interviews.
 
-### Core Capabilities
+### Core Capabilities :
 
 * Skill analysis
 * Skill-gap identification
@@ -122,7 +122,7 @@ An AI-powered career assistant designed to help users understand their skills, i
 
 An AI-powered study assistant that transforms learning materials into structured educational resources.
 
-### Core Capabilities
+### Core Capabilities :
 
 * AI-generated notes
 * Topic breakdown
@@ -183,20 +183,10 @@ The goal is to keep the interface visually engaging without sacrificing usabilit
 
 ```text
 Portfolio/
-│
 ├── index.html
-│
-├── assets/
-│   ├── css/
-│   │   └── style.css
-│   │
-│   ├── js/
-│   │   └── script.js
-│   │
-│   └── images/
-│
-├── README.md
-└── LICENSE
+├── style.css
+├── script.js
+└── README.md
 ```
 
 > The exact structure may evolve as the portfolio continues to be developed.
