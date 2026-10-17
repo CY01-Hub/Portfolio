@@ -918,8 +918,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.getElementById("hamburgerMenu");
 
   const navMenu = document.getElementById("navMenu");
+  const navClose = document.getElementById("navClose");
 
   if (hamburger && navMenu) {
+    const closeMenu = () => {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+      document.body.classList.remove("menu-open");
+    };
+
     hamburger.addEventListener("click", () => {
       hamburger.classList.toggle("active");
 
@@ -937,6 +944,8 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.classList.remove("menu-open");
       });
     });
+
+    navClose?.addEventListener("click", closeMenu);
   }
 
   /* ========================================================
@@ -1573,7 +1582,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const observerOptions = {
     root: null,
     rootMargin: "0px",
-    threshold: 0.15
+    threshold: 0.15,
   };
 
   const revealOnScroll = new IntersectionObserver((entries, observer) => {
@@ -1586,7 +1595,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }, observerOptions);
 
   // Apply to elements with scroll-reveal class
-  const revealElements = document.querySelectorAll(".scroll-reveal, .skill-category-block");
+  const revealElements = document.querySelectorAll(
+    ".scroll-reveal, .skill-category-block",
+  );
   revealElements.forEach((el) => {
     el.classList.add("fade-in-up");
     revealOnScroll.observe(el);
@@ -1635,7 +1646,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // -----------------------------------------------------------------
   // 3. Scroll Trigger Entrance Animation (Cards Fade & Slide Up)
   // -----------------------------------------------------------------
-  const cards = gsap.utils.toArray(".skill-category-block, .project-card, .glass");
+  const cards = gsap.utils.toArray(
+    ".skill-category-block, .project-card, .glass",
+  );
   cards.forEach((card) => {
     gsap.fromTo(
       card,
@@ -1651,7 +1664,7 @@ document.addEventListener("DOMContentLoaded", () => {
           end: "top 60%",
           toggleActions: "play none none reverse",
         },
-      }
+      },
     );
   });
 
@@ -1706,7 +1719,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const filterValue = btn.getAttribute("data-filter");
 
         cards.forEach((card) => {
-          const categories = card.getAttribute("data-category") ? card.getAttribute("data-category").split(" ") : [];
+          const categories = card.getAttribute("data-category")
+            ? card.getAttribute("data-category").split(" ")
+            : [];
 
           if (filterValue === "all" || categories.includes(filterValue)) {
             card.classList.remove("hide-card");

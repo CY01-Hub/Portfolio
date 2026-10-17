@@ -651,6 +651,9 @@ header.nav-hidden {
   list-style: none;
   gap: 2.2rem;
 }
+.nav-close {
+  display: none;
+}
 .nav-link {
   text-decoration: none;
   color: var(--text-muted);
@@ -698,15 +701,41 @@ header.nav-hidden {
 }
 .hamburger {
   display: none;
+  position: relative;
+  width: 32px;
+  height: 32px;
   flex-direction: column;
-  gap: 5px;
+  justify-content: center;
   cursor: pointer;
 }
 .hamburger .bar {
+  position: absolute;
+  left: 5px;
   width: 22px;
   height: 2px;
   background-color: var(--text-main);
-  transition: 0.3s;
+  transition:
+    transform 0.3s ease,
+    opacity 0.2s ease;
+}
+.hamburger .bar:nth-child(1) {
+  top: 9px;
+}
+.hamburger .bar:nth-child(2) {
+  top: 15px;
+}
+.hamburger .bar:nth-child(3) {
+  top: 21px;
+}
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 /* --- Hero Section --- */
@@ -1321,12 +1350,15 @@ header.nav-hidden {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
   margin: 2rem 0;
+  text-align: center;
 }
 .info-item {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   color: var(--text-muted);
+  text-align: center;
   padding: 1.1rem 1.2rem;
   border-radius: 12px;
   min-width: 0;
@@ -1619,15 +1651,47 @@ footer {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 250px;
+    left: auto;
+    z-index: 5100;
+    width: min(320px, 86vw);
     height: 100vh;
+    height: 100dvh;
+    padding: 6rem 2rem 2rem;
     background: var(--bg-main);
-    padding: 6rem 2rem;
-    transition: 0.3s;
+    border-left: 1px solid var(--border-glass);
+    box-shadow: -18px 0 48px rgba(0, 0, 0, 0.24);
+    transition: right 0.3s ease;
   }
 
   .nav-menu.active {
     right: 0;
+  }
+
+  .nav-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--border-glass);
+    border-radius: 50%;
+    background: var(--bg-cards);
+    color: var(--text-main);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition:
+      transform 0.25s ease,
+      background-color 0.25s ease;
+  }
+
+  .nav-close:hover {
+    transform: rotate(90deg);
+  }
+
+  .nav-menu.active .nav-close {
+    animation: nav-close-appear 0.3s ease both;
   }
 
   .nav-menu ul {
@@ -1635,7 +1699,24 @@ footer {
   }
 }
 
+@keyframes nav-close-appear {
+  from {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .hamburger .bar,
+  .nav-close {
+    transition: none;
+    animation: none !important;
+  }
+
   .footer-top.revealed .footer-logo,
   .footer-top.revealed .footer-links li {
     animation: none;
