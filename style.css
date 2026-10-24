@@ -1197,7 +1197,13 @@ header.nav-hidden {
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  min-width: 0;
+}
+.project-card .proj-details {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
 }
 .project-card h3 {
   font-size: 1.3rem;
@@ -1218,6 +1224,53 @@ header.nav-hidden {
   color: var(--secondary);
   font-weight: 600;
   margin-bottom: 0.8rem;
+}
+.certificate-meta {
+  display: grid;
+  gap: 0;
+  margin: -0.35rem 0 1.5rem;
+  padding: 0.2rem 0;
+  border-top: 1px solid var(--border-glass);
+  border-bottom: 1px solid var(--border-glass);
+  color: var(--text-muted);
+}
+.certificate-meta > div {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.8fr) minmax(0, 1.2fr);
+  gap: 1rem;
+  align-items: baseline;
+  min-width: 0;
+  padding: 0.55rem 0;
+}
+.certificate-meta > div + div {
+  border-top: 1px solid color-mix(in srgb, var(--border-glass) 55%, transparent);
+}
+.certificate-meta dt,
+.certificate-meta dd {
+  min-width: 0;
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+.certificate-meta dt {
+  color: var(--text-main);
+  font-weight: 600;
+}
+.certificate-meta dt i {
+  width: 1.25rem;
+  color: var(--secondary);
+}
+.certificate-meta dd {
+  overflow-wrap: anywhere;
+  word-break: normal;
+  white-space: normal;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (min-width: 969px) {
+  .certificate-meta dd {
+    min-width: 11.5ch;
+  }
 }
 .badge-wrapper {
   margin-bottom: 1rem;
@@ -1241,9 +1294,10 @@ header.nav-hidden {
 /* Project Links Container */
 .proj-links {
   display: flex;
-  flex-direction: column; /* Vertical alignment */
+  flex-direction: column;
   gap: 0.75rem;
-  margin-top: 1.5rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
   width: 100%;
 }
 
@@ -3226,7 +3280,8 @@ body.light-theme .filter-btn.active,
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-top: 1.5rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
   width: 100%;
 }
 
