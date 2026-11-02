@@ -1248,24 +1248,34 @@ header.nav-hidden {
 }
 .project-summary-icon {
   display: grid;
-  width: 3.25rem;
-  height: 3.25rem;
-  flex: 0 0 3.25rem;
+  width: 3.75rem;
+  height: 3.75rem;
+  flex: 0 0 3.75rem;
   place-items: center;
   overflow: hidden;
-  border: 1px solid var(--border-glass);
-  border-radius: 8px;
-  background: rgba(34, 211, 238, 0.08);
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
 }
 .project-summary-icon img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  border-radius: 50%;
+  object-fit: cover;
+  transition:
+    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.35s ease;
+}
+.project-toggle:hover .project-summary-icon img,
+.project-toggle:focus-visible .project-summary-icon img,
+.project-toggle[aria-expanded="true"] .project-summary-icon img {
+  transform: rotate(8deg) scale(1.12);
+  filter: saturate(1.2);
 }
 .project-summary-title {
   min-width: 0;
   color: var(--text-main);
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.4;
   overflow-wrap: anywhere;
@@ -1382,19 +1392,27 @@ header.nav-hidden {
 }
 .certificate-summary-icon {
   display: flex;
-  width: 2.5rem;
-  height: 2.5rem;
-  flex: 0 0 2.5rem;
+  width: 3rem;
+  height: 3rem;
+  flex: 0 0 3rem;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--border-glass);
-  border-radius: 8px;
+  border: 0;
   color: var(--primary);
-  background: rgba(34, 211, 238, 0.08);
+  background: transparent;
 }
 .certificate-summary-icon i {
   margin-right: 0;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
+  transition:
+    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+    color 0.3s ease;
+}
+.certificate-toggle:hover .certificate-summary-icon i,
+.certificate-toggle:focus-visible .certificate-summary-icon i,
+.certificate-toggle[aria-expanded="true"] .certificate-summary-icon i {
+  transform: rotate(-14deg) scale(1.18);
+  color: var(--secondary);
 }
 .certificate-summary-copy {
   display: flex;
@@ -1404,6 +1422,7 @@ header.nav-hidden {
 }
 .certificate-summary-title {
   color: var(--text-main);
+  font-size: 1.05rem;
   font-weight: 700;
   line-height: 1.35;
   overflow-wrap: anywhere;
@@ -1411,7 +1430,7 @@ header.nav-hidden {
 .certificate-summary-issuer,
 .certificate-summary-date {
   color: var(--text-muted);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   line-height: 1.4;
   overflow-wrap: anywhere;
 }
@@ -1553,11 +1572,16 @@ header.nav-hidden {
   .project-details,
   .project-toggle-action,
   .project-toggle-action i,
+  .project-summary-icon,
+  .project-summary-icon img,
   .card-icon-watermark,
   #certificates .certificate-details,
   #certificates .certificate-toggle-action,
-  #certificates .certificate-toggle-action i {
+  #certificates .certificate-toggle-action i,
+  .certificate-summary-icon,
+  .certificate-summary-icon i {
     transition: none;
+    transform: none;
   }
 }
 .project-card h3 {
