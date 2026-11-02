@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const particles = [];
 
-    const particleCount = Math.min(Math.floor(width / 28), 48);
+    const particleCount = Math.min(Math.floor(width / 22), 1000);
     const connectionDistanceSquared = 130 * 130;
     const mouseDistanceSquared = 160 * 160;
 
@@ -205,15 +205,15 @@ document.addEventListener("DOMContentLoaded", () => {
         this.x = Math.random() * width;
         this.y = Math.random() * height;
 
-        this.vx = (Math.random() - 0.5) * 0.45;
+        this.vx = (Math.random() - 0.5) * 0.55;
 
-        this.vy = (Math.random() - 0.5) * 0.45;
+        this.vy = (Math.random() - 0.5) * 0.55;
 
         this.text = tokens[Math.floor(Math.random() * tokens.length)];
 
         this.fontSize = Math.floor(Math.random() * 5) + 10;
 
-        this.alpha = Math.random() * 0.22 + 0.06;
+        this.alpha = Math.random() * 0.09 + 0.025;
       }
 
       update() {
@@ -263,7 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const theme = document.documentElement.getAttribute("data-theme");
 
       const lineColor =
-        theme === "light" ? "rgba(37,99,235,.08)" : "rgba(59,130,246,.08)";
+        theme === "light" ? "rgba(37,99,235,.04)" : "rgba(59,130,246,.04)";
 
       particles.forEach((particle, i) => {
         particle.update();
@@ -297,7 +297,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ctx.beginPath();
 
           ctx.strokeStyle =
-            theme === "light" ? "rgba(37,99,235,.18)" : "rgba(96,165,250,.20)";
+            theme === "light" ? "rgba(37,99,235,.08)" : "rgba(96,165,250,.09)";
 
           ctx.lineWidth = 1;
 
