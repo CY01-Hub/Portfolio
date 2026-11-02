@@ -118,7 +118,7 @@ section {
 }
 
 /* --- Custom Cursor System --- */
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
   body {
     cursor: none;
   }
@@ -1204,6 +1204,178 @@ header.nav-hidden {
   flex: 1;
   flex-direction: column;
   min-width: 0;
+}
+#certificates .projects-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 1.5rem;
+}
+#certificates .project-card {
+  min-width: 0;
+  padding: 1.25rem;
+}
+#certificates .certificate-toggle {
+  display: flex;
+  width: 100%;
+  min-height: 9.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+#certificates .certificate-toggle:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+.certificate-summary {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+.certificate-summary-icon {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 2.5rem;
+  place-items: center;
+  border: 1px solid var(--border-glass);
+  border-radius: 8px;
+  color: var(--primary);
+  background: rgba(34, 211, 238, 0.08);
+}
+.certificate-summary-icon i {
+  font-size: 1.1rem;
+}
+.certificate-summary-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.certificate-summary-title {
+  color: var(--text-main);
+  font-weight: 700;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.certificate-summary-issuer,
+.certificate-summary-date {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.certificate-summary-issuer {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  gap: 0.35rem;
+  color: var(--text-main);
+  font-weight: 600;
+}
+.certificate-summary-issuer i {
+  flex: 0 0 auto;
+  margin-top: 0.12em;
+  color: var(--secondary);
+}
+.certificate-summary-issuer-name {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.certificate-summary-date {
+  color: var(--secondary);
+}
+.certificate-summary-date i {
+  margin-right: 0.35rem;
+  color: var(--secondary);
+}
+.certificate-toggle-action {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.55rem;
+  border: 1px solid var(--border-glass);
+  border-radius: 6px;
+  color: var(--primary);
+  font-size: 0.74rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+.certificate-toggle:hover .certificate-toggle-action {
+  border-color: var(--primary);
+  background: rgba(59, 130, 246, 0.1);
+}
+.certificate-toggle-action i {
+  transition: transform 0.3s ease;
+}
+.certificate-toggle[aria-expanded="true"] .certificate-toggle-action i {
+  transform: rotate(180deg);
+}
+.certificate-details {
+  width: 100%;
+  min-width: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    max-height 0.4s ease,
+    opacity 0.25s ease,
+    transform 0.3s ease;
+}
+.certificate-toggle[aria-expanded="true"] + .certificate-details {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-glass);
+  opacity: 1;
+  transform: translateY(0);
+}
+#certificates .certificate-card:hover {
+  border-color: color-mix(in srgb, var(--secondary) 55%, var(--border-glass));
+}
+#certificates .certificate-details .proj-links {
+  min-width: 0;
+  align-items: stretch;
+}
+#certificates .certificate-details .btn-cert-link {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media (max-width: 900px) {
+  #certificates .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  #certificates .projects-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+  #certificates .project-card {
+    padding: 1rem;
+  }
+  #certificates .certificate-toggle {
+    min-height: 8rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #certificates .certificate-details,
+  #certificates .certificate-toggle-action,
+  #certificates .certificate-toggle-action i {
+    transition: none;
+  }
 }
 .project-card h3 {
   font-size: 1.3rem;

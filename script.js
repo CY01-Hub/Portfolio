@@ -579,7 +579,6 @@ document.addEventListener("DOMContentLoaded", () => {
         ".skill-category-block, " +
         ".timeline-card",
     );
-
     cards.forEach((card) => {
       card.addEventListener("pointermove", (event) => {
         const rect = card.getBoundingClientRect();
@@ -712,6 +711,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const trailLength = 7;
 
+    const trailDots = Array.from({ length: trailLength }, () => {
+      const dot = document.createElement("span");
+      dot.className = "cursor-trail-dot";
+      dot.style.cssText = `
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99990;
+        background: var(--secondary);
+        opacity: 0;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 12px var(--glow-color);
+      `;
+      document.body.appendChild(dot);
+      return dot;
+    });
+
     window.addEventListener(
       "pointermove",
       (event) => {
@@ -723,48 +743,25 @@ document.addEventListener("DOMContentLoaded", () => {
         if (trail.length > trailLength) {
           trail.shift();
         }
+        trailDots.forEach((dot, index) => {
+          const point = trail[index];
+          if (!point) {
+            dot.style.opacity = "0";
+            return;
+          }
+
+          const scale = (index + 1) / trail.length;
+          const size = 3 + scale * 5;
+          dot.style.left = `${point.x}px`;
+          dot.style.top = `${point.y}px`;
+          dot.style.width = `${size}px`;
+          dot.style.height = `${size}px`;
+          dot.style.opacity = String(scale * 0.24);
+          dot.style.boxShadow = `0 0 ${size * 2}px var(--glow-color)`;
+        });
       },
       { passive: true },
     );
-
-    function renderTrail() {
-      document
-        .querySelectorAll(".cursor-trail-dot")
-        .forEach((element) => element.remove());
-
-      trail.forEach((point, index) => {
-        const dot = document.createElement("span");
-
-        dot.className = "cursor-trail-dot";
-
-        const scale = (index + 1) / trail.length;
-
-        const size = 3 + scale * 5;
-
-        dot.style.cssText = `
-                        position: fixed;
-                        left: ${point.x}px;
-                        top: ${point.y}px;
-                        width: ${size}px;
-                        height: ${size}px;
-                        border-radius: 50%;
-                        pointer-events: none;
-                        z-index: 99990;
-                        background: var(--secondary);
-                        opacity: ${scale * 0.24};
-                        transform: translate(-50%, -50%);
-                        box-shadow:
-                            0 0 ${size * 2}px
-                            var(--glow-color);
-                    `;
-
-        document.body.appendChild(dot);
-      });
-
-      requestAnimationFrame(renderTrail);
-    }
-
-    renderTrail();
   }
 
   /* ========================================================
@@ -1710,6 +1707,144 @@ document.addEventListener("DOMContentLoaded", () => {
     const filterBtns = section.querySelectorAll(".filter-btn");
     const cards = section.querySelectorAll(".project-card");
 
+    if (section.id === "certificates") {
+      const grid = section.querySelector(".projects-grid");
+      const certificateCards = section.querySelectorAll(".project-card");
+      const expansionListeners = new WeakMap();
+
+      const setExpanded = (card, expanded) => {
+        const toggle = card.querySelector(".certificate-toggle");
+        const details = card.querySelector(".certificate-details");
+        if (!toggle || !details) return;
+
+        toggle.setAttribute("aria-expanded", String(expanded));
+        toggle.querySelector(".certificate-toggle-label").textContent = expanded
+          ? "Hide Details"
+          : "View Details";
+        details.setAttribute("aria-hidden", String(!expanded));
+        details.inert = !expanded;
+        const previousListener = expansionListeners.get(details);
+        if (previousListener) {
+          details.removeEventListener("transitionend", previousListener);
+          expansionListeners.delete(details);
+        }
+
+        if (expanded) {
+          details.style.maxHeight = `${details.scrollHeight}px`;
+          if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            details.style.maxHeight = "none";
+            return;
+          }
+
+          const finishExpansion = (event) => {
+            if (event.target !== details || event.propertyName !== "max-height")
+              return;
+            if (toggle.getAttribute("aria-expanded") === "true") {
+              details.style.maxHeight = "none";
+            }
+            details.removeEventListener("transitionend", finishExpansion);
+            expansionListeners.delete(details);
+          };
+          expansionListeners.set(details, finishExpansion);
+          details.addEventListener("transitionend", finishExpansion);
+        } else {
+          details.style.maxHeight = `${details.scrollHeight}px`;
+          if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            details.style.maxHeight = "0px";
+            return;
+          }
+          requestAnimationFrame(() => {
+            details.style.maxHeight = "0px";
+          });
+        }
+      };
+
+      certificateCards.forEach((card, index) => {
+        const content = card.querySelector(".proj-details");
+        const date = content?.querySelector(".edu-year");
+        const title = content?.querySelector("h3");
+        const issuer = content?.querySelector(".issuer-tag");
+        if (!content || !date || !title || !issuer) return;
+
+        const toggle = document.createElement("button");
+        const details = document.createElement("div");
+        const summary = document.createElement("span");
+        const icon = document.createElement("span");
+        const copy = document.createElement("span");
+        const titleText = document.createElement("span");
+        const issuerText = document.createElement("span");
+        const issuerName = document.createElement("span");
+        const dateText = document.createElement("span");
+        const action = document.createElement("span");
+        const chevron = document.createElement("i");
+
+        toggle.type = "button";
+        toggle.className = "certificate-toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute(
+          "aria-controls",
+          `certificate-details-${index + 1}`,
+        );
+
+        details.className = "certificate-details";
+        details.id = `certificate-details-${index + 1}`;
+        details.setAttribute("aria-hidden", "true");
+        details.inert = true;
+
+        summary.className = "certificate-summary";
+        icon.className = "certificate-summary-icon";
+        copy.className = "certificate-summary-copy";
+        titleText.className = "certificate-summary-title";
+        issuerText.className = "certificate-summary-issuer";
+        issuerName.className = "certificate-summary-issuer-name";
+        dateText.className = "certificate-summary-date";
+        action.className = "certificate-toggle-action";
+
+        const certificateIcon = title.querySelector("i");
+        if (certificateIcon) icon.append(certificateIcon.cloneNode(true));
+        titleText.textContent = title.textContent.trim();
+        const issuerIcon = issuer.querySelector("i");
+        if (issuerIcon) issuerText.append(issuerIcon.cloneNode(true));
+        issuerName.textContent = issuer.textContent.trim();
+        issuerText.append(issuerName);
+        dateText.textContent = date.textContent.trim();
+        dateText.prepend(
+          date.querySelector("i")?.cloneNode(true) ??
+            document.createTextNode(""),
+        );
+
+        const actionLabel = document.createElement("span");
+        actionLabel.className = "certificate-toggle-label";
+        actionLabel.textContent = "View Details";
+        action.append(actionLabel, document.createTextNode(" "));
+        chevron.className = "fas fa-chevron-down";
+        chevron.setAttribute("aria-hidden", "true");
+        action.append(chevron);
+        copy.append(titleText, issuerText, dateText);
+        summary.append(icon, copy);
+        toggle.append(summary, action);
+
+        date.remove();
+        title.remove();
+        issuer.remove();
+        while (content.firstChild) details.append(content.firstChild);
+        content.append(toggle, details);
+        card.classList.add("certificate-card");
+      });
+
+      grid?.addEventListener("click", (event) => {
+        const card = event.target.closest(".certificate-card");
+        if (!card || !grid.contains(card)) return;
+
+        const toggle = card.querySelector(".certificate-toggle");
+        if (!toggle) return;
+        const clickedControl = event.target.closest("a, button");
+        if (clickedControl && clickedControl !== toggle) return;
+
+        setExpanded(card, toggle.getAttribute("aria-expanded") !== "true");
+      });
+    }
+
     filterBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
         // Remove active state from current section's buttons
@@ -1728,6 +1863,20 @@ document.addEventListener("DOMContentLoaded", () => {
             card.classList.add("fade-in");
             setTimeout(() => card.classList.remove("fade-in"), 400);
           } else {
+            if (section.id === "certificates") {
+              const toggle = card.querySelector(".certificate-toggle");
+              if (toggle?.getAttribute("aria-expanded") === "true") {
+                const details = card.querySelector(".certificate-details");
+                toggle.setAttribute("aria-expanded", "false");
+                toggle.querySelector(".certificate-toggle-label").textContent =
+                  "View Details";
+                details?.setAttribute("aria-hidden", "true");
+                if (details) {
+                  details.inert = true;
+                  details.style.maxHeight = "0px";
+                }
+              }
+            }
             card.classList.add("hide-card");
           }
         });
