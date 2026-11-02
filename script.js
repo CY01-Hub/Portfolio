@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let progress = 0;
 
     const loaderInterval = setInterval(() => {
-      progress += Math.random() * 3 + 1.5;
+      progress += Math.random() * 5 + 5;
 
       if (progress >= 100) {
         progress = 100;
@@ -73,10 +73,10 @@ document.addEventListener("DOMContentLoaded", () => {
             if (loader && loader.parentNode) {
               loader.remove();
             }
-          }, 700);
-        }, 250);
+          }, 350);
+        }, 150);
       }
-    }, 70);
+    }, 50);
   }
 
   /* ========================================================
@@ -102,6 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         cursorDot.style.left = `${mouseX}px`;
         cursorDot.style.top = `${mouseY}px`;
+        document.body.classList.add("custom-cursor-active");
       },
       { passive: true },
     );
@@ -142,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const canvas = document.getElementById("bg-canvas");
 
-  if (canvas && !reduceMotion) {
+  if (canvas) {
     const ctx = canvas.getContext("2d");
 
     let width = (canvas.width = window.innerWidth);
@@ -195,7 +196,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const particles = [];
 
-    const particleCount = Math.min(Math.floor(width / 20), 60);
+    const particleCount = Math.min(Math.floor(width / 28), 48);
+    const connectionDistanceSquared = 130 * 130;
+    const mouseDistanceSquared = 160 * 160;
 
     class Particle {
       constructor() {
@@ -224,9 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (this.y > height) this.y = 0;
       }
 
-      draw() {
-        const theme = document.documentElement.getAttribute("data-theme");
-
+      draw(theme) {
         ctx.fillStyle =
           theme === "light"
             ? `rgba(37,99,235,${this.alpha})`
@@ -266,16 +267,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       particles.forEach((particle, i) => {
         particle.update();
-        particle.draw();
+        particle.draw(theme);
 
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particle.x - particles[j].x;
 
           const dy = particle.y - particles[j].y;
 
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 130) {
+          if (dx * dx + dy * dy < connectionDistanceSquared) {
             ctx.beginPath();
 
             ctx.strokeStyle = lineColor;
@@ -294,9 +293,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const mouseDY = particle.y - mouse.y;
 
-        const mouseDistance = Math.sqrt(mouseDX * mouseDX + mouseDY * mouseDY);
-
-        if (mouseDistance < 160) {
+        if (mouseDX * mouseDX + mouseDY * mouseDY < mouseDistanceSquared) {
           ctx.beginPath();
 
           ctx.strokeStyle =
@@ -312,7 +309,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-      requestAnimationFrame(animateBackground);
+      if (!reduceMotion) {
+        requestAnimationFrame(animateBackground);
+      }
     }
 
     animateBackground();
@@ -323,6 +322,9 @@ document.addEventListener("DOMContentLoaded", () => {
         width = canvas.width = window.innerWidth;
 
         height = canvas.height = window.innerHeight;
+        if (reduceMotion) {
+          animateBackground();
+        }
       },
       { passive: true },
     );
@@ -1702,62 +1704,151 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("#projects, #certificates");
+  const expansionListeners = new WeakMap();
+
+  const setExpanded = (card, expanded) => {
+    const toggle = card.querySelector(".card-toggle");
+    const details = card.querySelector(".card-details");
+    const label = toggle?.querySelector(".card-toggle-label");
+    if (!toggle || !details || !label) return;
+
+    toggle.setAttribute("aria-expanded", String(expanded));
+    label.textContent = expanded ? "Hide Details" : "View Details";
+    details.setAttribute("aria-hidden", String(!expanded));
+    details.inert = !expanded;
+
+    const previousListener = expansionListeners.get(details);
+    if (previousListener) {
+      details.removeEventListener("transitionend", previousListener);
+      expansionListeners.delete(details);
+    }
+
+    if (expanded) {
+      details.style.maxHeight = `${details.scrollHeight}px`;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        details.style.maxHeight = "none";
+        return;
+      }
+
+      const finishExpansion = (event) => {
+        if (event.target !== details || event.propertyName !== "max-height")
+          return;
+        if (toggle.getAttribute("aria-expanded") === "true") {
+          details.style.maxHeight = "none";
+        }
+        details.removeEventListener("transitionend", finishExpansion);
+        expansionListeners.delete(details);
+      };
+      expansionListeners.set(details, finishExpansion);
+      details.addEventListener("transitionend", finishExpansion);
+    } else {
+      details.style.maxHeight = `${details.scrollHeight}px`;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        details.style.maxHeight = "0px";
+        return;
+      }
+      requestAnimationFrame(() => {
+        details.style.maxHeight = "0px";
+      });
+    }
+  };
+
+  const addIconWatermark = (card, sourceIcon, sectionName) => {
+    if (!sourceIcon) return;
+
+    const watermark = document.createElement("span");
+    const icon = sourceIcon.cloneNode(true);
+    watermark.className = `card-icon-watermark ${sectionName}-icon-watermark`;
+    watermark.setAttribute("aria-hidden", "true");
+
+    if (icon instanceof HTMLImageElement) {
+      icon.alt = "";
+      icon.removeAttribute("class");
+    }
+
+    watermark.append(icon);
+    card.prepend(watermark);
+  };
 
   sections.forEach((section) => {
     const filterBtns = section.querySelectorAll(".filter-btn");
     const cards = section.querySelectorAll(".project-card");
 
+    if (section.id === "projects") {
+      const grid = section.querySelector(".projects-grid");
+      const projectCards = section.querySelectorAll(".project-card");
+
+      projectCards.forEach((card, index) => {
+        const content = card.querySelector(".proj-details");
+        const title = content?.querySelector("h3");
+        if (!content || !title) return;
+
+        const sourceIcon = title.querySelector("img, i");
+        const toggle = document.createElement("button");
+        const summary = document.createElement("span");
+        const icon = document.createElement("span");
+        const titleText = document.createElement("span");
+        const action = document.createElement("span");
+        const actionLabel = document.createElement("span");
+        const chevron = document.createElement("i");
+        const details = document.createElement("div");
+
+        toggle.type = "button";
+        toggle.className = "project-toggle card-toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-controls", `project-details-${index + 1}`);
+
+        summary.className = "project-summary";
+        icon.className = "project-summary-icon";
+        titleText.className = "project-summary-title";
+        action.className = "project-toggle-action";
+        actionLabel.className = "card-toggle-label";
+        actionLabel.textContent = "View Details";
+
+        if (sourceIcon) {
+          const summaryIcon = sourceIcon.cloneNode(true);
+          if (summaryIcon instanceof HTMLImageElement) {
+            summaryIcon.alt = "";
+            summaryIcon.removeAttribute("class");
+          }
+          icon.append(summaryIcon);
+        }
+
+        titleText.textContent = title.textContent.trim();
+        chevron.className = "fas fa-chevron-down";
+        chevron.setAttribute("aria-hidden", "true");
+        action.append(actionLabel, document.createTextNode(" "), chevron);
+        summary.append(icon, titleText);
+        toggle.append(summary, action);
+
+        details.className = "project-details card-details";
+        details.id = `project-details-${index + 1}`;
+        details.setAttribute("aria-hidden", "true");
+        details.inert = true;
+
+        title.remove();
+        while (content.firstChild) details.append(content.firstChild);
+        content.append(toggle, details);
+        card.classList.add("project-expandable-card", "expandable-card");
+        addIconWatermark(card, sourceIcon, "project");
+      });
+
+      grid?.addEventListener("click", (event) => {
+        const card = event.target.closest(".project-expandable-card");
+        if (!card || !grid.contains(card)) return;
+
+        const toggle = card.querySelector(".card-toggle");
+        if (!toggle) return;
+        const clickedControl = event.target.closest("a, button");
+        if (clickedControl && clickedControl !== toggle) return;
+
+        setExpanded(card, toggle.getAttribute("aria-expanded") !== "true");
+      });
+    }
+
     if (section.id === "certificates") {
       const grid = section.querySelector(".projects-grid");
       const certificateCards = section.querySelectorAll(".project-card");
-      const expansionListeners = new WeakMap();
-
-      const setExpanded = (card, expanded) => {
-        const toggle = card.querySelector(".certificate-toggle");
-        const details = card.querySelector(".certificate-details");
-        if (!toggle || !details) return;
-
-        toggle.setAttribute("aria-expanded", String(expanded));
-        toggle.querySelector(".certificate-toggle-label").textContent = expanded
-          ? "Hide Details"
-          : "View Details";
-        details.setAttribute("aria-hidden", String(!expanded));
-        details.inert = !expanded;
-        const previousListener = expansionListeners.get(details);
-        if (previousListener) {
-          details.removeEventListener("transitionend", previousListener);
-          expansionListeners.delete(details);
-        }
-
-        if (expanded) {
-          details.style.maxHeight = `${details.scrollHeight}px`;
-          if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-            details.style.maxHeight = "none";
-            return;
-          }
-
-          const finishExpansion = (event) => {
-            if (event.target !== details || event.propertyName !== "max-height")
-              return;
-            if (toggle.getAttribute("aria-expanded") === "true") {
-              details.style.maxHeight = "none";
-            }
-            details.removeEventListener("transitionend", finishExpansion);
-            expansionListeners.delete(details);
-          };
-          expansionListeners.set(details, finishExpansion);
-          details.addEventListener("transitionend", finishExpansion);
-        } else {
-          details.style.maxHeight = `${details.scrollHeight}px`;
-          if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-            details.style.maxHeight = "0px";
-            return;
-          }
-          requestAnimationFrame(() => {
-            details.style.maxHeight = "0px";
-          });
-        }
-      };
 
       certificateCards.forEach((card, index) => {
         const content = card.querySelector(".proj-details");
@@ -1779,14 +1870,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const chevron = document.createElement("i");
 
         toggle.type = "button";
-        toggle.className = "certificate-toggle";
+        toggle.className = "certificate-toggle card-toggle";
         toggle.setAttribute("aria-expanded", "false");
         toggle.setAttribute(
           "aria-controls",
           `certificate-details-${index + 1}`,
         );
 
-        details.className = "certificate-details";
+        details.className = "certificate-details card-details";
         details.id = `certificate-details-${index + 1}`;
         details.setAttribute("aria-hidden", "true");
         details.inert = true;
@@ -1802,6 +1893,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const certificateIcon = title.querySelector("i");
         if (certificateIcon) icon.append(certificateIcon.cloneNode(true));
+        addIconWatermark(card, certificateIcon, "certificate");
         titleText.textContent = title.textContent.trim();
         const issuerIcon = issuer.querySelector("i");
         if (issuerIcon) issuerText.append(issuerIcon.cloneNode(true));
@@ -1814,7 +1906,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         const actionLabel = document.createElement("span");
-        actionLabel.className = "certificate-toggle-label";
+        actionLabel.className = "certificate-toggle-label card-toggle-label";
         actionLabel.textContent = "View Details";
         action.append(actionLabel, document.createTextNode(" "));
         chevron.className = "fas fa-chevron-down";
@@ -1829,14 +1921,14 @@ document.addEventListener("DOMContentLoaded", () => {
         issuer.remove();
         while (content.firstChild) details.append(content.firstChild);
         content.append(toggle, details);
-        card.classList.add("certificate-card");
+        card.classList.add("certificate-card", "expandable-card");
       });
 
       grid?.addEventListener("click", (event) => {
         const card = event.target.closest(".certificate-card");
         if (!card || !grid.contains(card)) return;
 
-        const toggle = card.querySelector(".certificate-toggle");
+        const toggle = card.querySelector(".card-toggle");
         if (!toggle) return;
         const clickedControl = event.target.closest("a, button");
         if (clickedControl && clickedControl !== toggle) return;
@@ -1863,19 +1955,9 @@ document.addEventListener("DOMContentLoaded", () => {
             card.classList.add("fade-in");
             setTimeout(() => card.classList.remove("fade-in"), 400);
           } else {
-            if (section.id === "certificates") {
-              const toggle = card.querySelector(".certificate-toggle");
-              if (toggle?.getAttribute("aria-expanded") === "true") {
-                const details = card.querySelector(".certificate-details");
-                toggle.setAttribute("aria-expanded", "false");
-                toggle.querySelector(".certificate-toggle-label").textContent =
-                  "View Details";
-                details?.setAttribute("aria-hidden", "true");
-                if (details) {
-                  details.inert = true;
-                  details.style.maxHeight = "0px";
-                }
-              }
+            const toggle = card.querySelector(".card-toggle");
+            if (toggle?.getAttribute("aria-expanded") === "true") {
+              setExpanded(card, false);
             }
             card.classList.add("hide-card");
           }

@@ -119,16 +119,16 @@ section {
 
 /* --- Custom Cursor System --- */
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  body {
+  body.custom-cursor-active {
     cursor: none;
   }
-  a,
-  button,
-  input,
-  textarea,
-  .glass,
-  .tag,
-  .glow-box {
+  body.custom-cursor-active a,
+  body.custom-cursor-active button,
+  body.custom-cursor-active input,
+  body.custom-cursor-active textarea,
+  body.custom-cursor-active .glass,
+  body.custom-cursor-active .tag,
+  body.custom-cursor-active .glow-box {
     cursor: none !important;
   }
 
@@ -1205,6 +1205,147 @@ header.nav-hidden {
   flex-direction: column;
   min-width: 0;
 }
+#projects .projects-grid {
+  align-items: start;
+}
+#projects .project-expandable-card,
+#certificates .certificate-card {
+  position: relative;
+  isolation: isolate;
+}
+#projects .project-expandable-card {
+  padding: 1.25rem;
+}
+#projects .project-expandable-card .proj-details,
+#certificates .certificate-card .proj-details {
+  position: relative;
+  z-index: 1;
+}
+#projects .project-toggle {
+  display: flex;
+  width: 100%;
+  min-height: 8rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+#projects .project-toggle:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+.project-summary {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.9rem;
+}
+.project-summary-icon {
+  display: grid;
+  width: 3.25rem;
+  height: 3.25rem;
+  flex: 0 0 3.25rem;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid var(--border-glass);
+  border-radius: 8px;
+  background: rgba(34, 211, 238, 0.08);
+}
+.project-summary-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.project-summary-title {
+  min-width: 0;
+  color: var(--text-main);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.project-toggle-action {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.55rem;
+  border: 1px solid var(--border-glass);
+  border-radius: 6px;
+  color: var(--primary);
+  font-size: 0.74rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+.project-toggle:hover .project-toggle-action {
+  border-color: var(--primary);
+  background: rgba(59, 130, 246, 0.1);
+}
+.project-toggle-action i {
+  transition: transform 0.3s ease;
+}
+.project-toggle[aria-expanded="true"] .project-toggle-action i {
+  transform: rotate(180deg);
+}
+.project-details {
+  width: 100%;
+  min-width: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    max-height 0.4s ease,
+    opacity 0.25s ease,
+    transform 0.3s ease;
+}
+.project-toggle[aria-expanded="true"] + .project-details {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-glass);
+  opacity: 1;
+  transform: translateY(0);
+}
+.card-icon-watermark {
+  position: absolute;
+  top: 50%;
+  right: 1.25rem;
+  z-index: 0;
+  display: grid;
+  width: 8rem;
+  height: 8rem;
+  place-items: center;
+  color: var(--secondary);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(calc(-50% + 6px)) rotate(-10deg) scale(0.92);
+  transition:
+    opacity 0.3s ease,
+    transform 0.4s ease;
+}
+.card-icon-watermark i {
+  font-size: 7rem;
+  line-height: 1;
+}
+.card-icon-watermark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(1) brightness(1.5);
+}
+.expandable-card:hover > .card-icon-watermark,
+.expandable-card:focus-within > .card-icon-watermark {
+  opacity: 0.11;
+  transform: translateY(-50%) rotate(-10deg) scale(1);
+}
 #certificates .projects-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: start;
@@ -1240,17 +1381,19 @@ header.nav-hidden {
   gap: 0.9rem;
 }
 .certificate-summary-icon {
-  display: grid;
+  display: flex;
   width: 2.5rem;
   height: 2.5rem;
   flex: 0 0 2.5rem;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
   border: 1px solid var(--border-glass);
   border-radius: 8px;
   color: var(--primary);
   background: rgba(34, 211, 238, 0.08);
 }
 .certificate-summary-icon i {
+  margin-right: 0;
   font-size: 1.1rem;
 }
 .certificate-summary-copy {
@@ -1352,6 +1495,17 @@ header.nav-hidden {
   min-width: 0;
   max-width: 100%;
 }
+#projects .project-details .proj-links {
+  width: 100%;
+  min-width: 0;
+  align-items: stretch;
+}
+#projects .project-details .btn-project-action {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
 
 @media (max-width: 900px) {
   #certificates .projects-grid {
@@ -1359,6 +1513,34 @@ header.nav-hidden {
   }
 }
 @media (max-width: 600px) {
+  #projects .projects-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+  #projects .project-expandable-card {
+    padding: 1rem;
+  }
+  #projects .project-toggle {
+    min-height: 0;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  #certificates .certificate-toggle {
+    min-height: 0;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .project-summary,
+  .certificate-summary {
+    flex: 1 1 100%;
+  }
+  .project-toggle-action,
+  .certificate-toggle-action {
+    margin-left: auto;
+    gap: 0.3rem;
+    padding: 0.35rem 0.45rem;
+    font-size: 0.68rem;
+  }
   #certificates .projects-grid {
     grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
@@ -1366,11 +1548,12 @@ header.nav-hidden {
   #certificates .project-card {
     padding: 1rem;
   }
-  #certificates .certificate-toggle {
-    min-height: 8rem;
-  }
 }
 @media (prefers-reduced-motion: reduce) {
+  .project-details,
+  .project-toggle-action,
+  .project-toggle-action i,
+  .card-icon-watermark,
   #certificates .certificate-details,
   #certificates .certificate-toggle-action,
   #certificates .certificate-toggle-action i {
